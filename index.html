@@ -7,7 +7,7 @@
 <meta name="description" content="Εμπορικό design studio στην Αθήνα για εσωτερικούς χώρους, branding, web design και ανακαινίσεις για ξενοδοχεία, εστιατόρια, γραφεία και retail." />
 <link rel="canonical" href="https://eoloslab.gr/" />
 <meta name="theme-color" content="#1a1917">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="robots" content="noindex, nofollow, noarchive">
 <link rel="alternate" hreflang="el" href="https://eoloslab.gr/" />
 <link rel="alternate" hreflang="x-default" href="https://eoloslab.gr/" />
 <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -107,7 +107,6 @@
 }
 </script>
 
-<link rel="preload" as="image" href="assets/dterra-hero.avif" type="image/avif" />
 <link rel="preload" as="image" href="assets/dterra-hero.webp" type="image/webp" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -513,6 +512,167 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
   .work[data-bleed="asym-left"]  .frame{ margin-left: 0; margin-right: 0; aspect-ratio: 16 / 10; }
 }
 
+/* ─── Review gallery ─── */
+.review-gallery{
+  border-top: 1px solid var(--rule);
+  padding-bottom: clamp(58px, 9vh, 118px);
+}
+.review-gallery .gallery-intro{
+  max-width: 70ch;
+  margin: -22px var(--pad-x) clamp(34px, 5vw, 58px) calc(var(--pad-x) + min(34vw, 520px));
+  color: var(--ink-mute);
+  font-size: clamp(15px, 1.25vw, 18px);
+  line-height: 1.7;
+}
+.review-filters{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 var(--pad-x) clamp(24px, 4vw, 42px);
+}
+.review-filter{
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 9px 13px;
+  color: var(--ink-mute);
+  font-family: var(--f-mono);
+  font-size: var(--t-meta);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  transition: color 220ms ease, border-color 220ms ease, background 220ms ease;
+}
+.review-filter:hover,
+.review-filter[aria-pressed="true"]{
+  color: var(--bg);
+  background: var(--ink);
+  border-color: var(--ink);
+}
+.review-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.review-card{
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--bg-2);
+  cursor: zoom-in;
+  isolation: isolate;
+}
+.review-card img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  filter: saturate(.94) brightness(.92);
+  transform: scale(1.01);
+  transition: transform 800ms cubic-bezier(.2,.7,.2,1), filter 600ms ease;
+}
+.review-card:hover img{
+  transform: scale(1.045);
+  filter: saturate(1.03) brightness(1);
+}
+.review-meta{
+  position: absolute;
+  inset: auto 0 0;
+  padding: 18px;
+  color: #f7f3ed;
+  background: linear-gradient(to top, rgba(15,14,13,.86), rgba(15,14,13,.38) 58%, transparent);
+  z-index: 1;
+}
+.review-meta span{
+  display: block;
+  margin-bottom: 7px;
+  opacity: .76;
+  font-family: var(--f-mono);
+  font-size: var(--t-meta);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+}
+.review-meta h3{
+  max-width: 30ch;
+  font-family: var(--f-display);
+  font-size: clamp(21px, 2.1vw, 34px);
+  line-height: .98;
+  letter-spacing: -0.012em;
+}
+.review-more{
+  display: flex;
+  justify-content: center;
+  padding: clamp(28px, 5vw, 48px) var(--pad-x) 0;
+}
+.review-more button{
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  padding: 13px 19px;
+  color: var(--ink);
+  font-family: var(--f-mono);
+  font-size: var(--t-meta);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  transition: color 220ms ease, background 220ms ease;
+}
+.review-more button:hover{ color: var(--bg); background: var(--ink); }
+.review-lightbox{
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(18px, 4vw, 54px);
+  background: rgba(16,15,14,.94);
+}
+.review-lightbox[data-open="true"]{ display: flex; }
+.review-lightbox figure{
+  width: min(1180px, 92vw);
+  max-height: 88vh;
+  margin: 0;
+}
+.review-lightbox img{
+  display: block;
+  width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+}
+.review-lightbox figcaption{
+  margin-top: 14px;
+  color: rgba(247,243,237,.72);
+  font-family: var(--f-mono);
+  font-size: var(--t-meta);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+}
+.review-lightbox button{
+  position: fixed;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(247,243,237,.32);
+  color: rgba(247,243,237,.88);
+  background: rgba(16,15,14,.42);
+}
+.review-lightbox .close{ top: 22px; right: 22px; }
+.review-lightbox .prev{ left: 22px; top: 50%; transform: translateY(-50%); }
+.review-lightbox .next{ right: 22px; top: 50%; transform: translateY(-50%); }
+@media (max-width: 900px){
+  .review-gallery .gallery-intro{ margin: 0 var(--pad-x) 34px; }
+  .review-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px){
+  .review-grid{ grid-template-columns: 1fr; }
+  .review-card{ aspect-ratio: 1 / .82; }
+  .review-lightbox .prev,
+  .review-lightbox .next{ top: auto; bottom: 18px; transform: none; }
+  .review-lightbox .prev{ left: calc(50% - 52px); }
+  .review-lightbox .next{ right: calc(50% - 52px); }
+}
+
 /* layout: marquee scroll-snap */
 [data-layout="marquee"] .work-list{
   flex-direction: row;
@@ -827,7 +987,6 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     </div>
     <div class="hero-plate">
       <picture>
-        <source srcset="assets/dterra-hero.avif" type="image/avif">
         <img src="assets/dterra-hero.webp" alt="Dterra — bistro interior" fetchpriority="high" decoding="async">
       </picture>
     </div>
@@ -866,13 +1025,13 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <!-- 01 K38 -->
     <article class="work" data-screen-label="Work · K38">
       <div class="frame">
-        <picture><source srcset="assets/k38.avif" type="image/avif"><img src="assets/k38.webp" alt="K38 — open plan living and kitchen" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/k38-2.avif" type="image/avif"><img src="assets/gallery/k38-2.webp" alt="K38 — rooftop terrace Athens" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/k38-3.avif" type="image/avif"><img src="assets/gallery/k38-3.webp" alt="K38 — materials board" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/k38-4.avif" type="image/avif"><img src="assets/gallery/k38-4.webp" alt="K38 — console and painting detail" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/k38-5.avif" type="image/avif"><img src="assets/gallery/k38-5.webp" alt="K38 — dining area" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/k38-6.avif" type="image/avif"><img src="assets/gallery/k38-6.webp" alt="K38 — bedroom" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/k38-7.avif" type="image/avif"><img src="assets/gallery/k38-7.webp" alt="K38 — terrace detail" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/k38.webp" alt="K38 — open plan living and kitchen" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/k38-2.webp" alt="K38 — rooftop terrace Athens" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/k38-3.webp" alt="K38 — materials board" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/k38-4.webp" alt="K38 — console and painting detail" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/k38-5.webp" alt="K38 — dining area" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/k38-6.webp" alt="K38 — bedroom" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/k38-7.webp" alt="K38 — terrace detail" loading="lazy" decoding="async"></picture>
       </div>
       <div class="row">
         <div class="num meta">N° 01 / 08</div>
@@ -888,13 +1047,13 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <!-- 02 Dterra -->
     <article class="work" data-bleed="asym-right" data-screen-label="Work · Dterra">
       <div class="frame">
-        <picture><source srcset="assets/dterra.avif" type="image/avif"><img src="assets/dterra.webp" alt="Bistró Dterra — restaurant interior" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/dterra-2.avif" type="image/avif"><img src="assets/gallery/dterra-2.webp" alt="Dterra — dining room" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/dterra-3.avif" type="image/avif"><img src="assets/gallery/dterra-3.webp" alt="Dterra — bar detail" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/dterra-4.avif" type="image/avif"><img src="assets/gallery/dterra-4.webp" alt="Dterra — terrace" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/dterra-5.avif" type="image/avif"><img src="assets/gallery/dterra-5.webp" alt="Dterra — entrance" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/dterra-6.avif" type="image/avif"><img src="assets/gallery/dterra-6.webp" alt="Dterra — lighting detail" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/dterra-7.avif" type="image/avif"><img src="assets/gallery/dterra-7.webp" alt="Dterra — table setting" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/dterra.webp" alt="Bistró Dterra — restaurant interior" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/dterra-2.webp" alt="Dterra — dining room" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/dterra-3.webp" alt="Dterra — bar detail" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/dterra-4.webp" alt="Dterra — terrace" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/dterra-5.webp" alt="Dterra — entrance" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/dterra-6.webp" alt="Dterra — lighting detail" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/dterra-7.webp" alt="Dterra — table setting" loading="lazy" decoding="async"></picture>
       </div>
       <div class="row">
         <div class="num meta">N° 02 / 08</div>
@@ -911,12 +1070,12 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <!-- 03 A75 -->
     <article class="work" data-screen-label="Work · A75">
       <div class="frame">
-        <picture><source srcset="assets/a75.avif" type="image/avif"><img src="assets/a75.webp" alt="A75 — living room" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/a75-2.avif" type="image/avif"><img src="assets/gallery/a75-2.webp" alt="A75 — dining area" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/a75-3.avif" type="image/avif"><img src="assets/gallery/a75-3.webp" alt="A75 — bedroom" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/a75-4.avif" type="image/avif"><img src="assets/gallery/a75-4.webp" alt="A75 — kitchen" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/a75-5.avif" type="image/avif"><img src="assets/gallery/a75-5.webp" alt="A75 — terrace" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/a75-6.avif" type="image/avif"><img src="assets/gallery/a75-6.webp" alt="A75 — detail" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/a75.webp" alt="A75 — living room" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/a75-2.webp" alt="A75 — dining area" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/a75-3.webp" alt="A75 — bedroom" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/a75-4.webp" alt="A75 — kitchen" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/a75-5.webp" alt="A75 — terrace" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/a75-6.webp" alt="A75 — detail" loading="lazy" decoding="async"></picture>
       </div>
       <div class="row">
         <div class="num meta">N° 03 / 08</div>
@@ -932,15 +1091,15 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <!-- 04 Granolita -->
     <article class="work" data-bleed="asym-left" data-screen-label="Work · Granolita">
       <div class="frame">
-        <picture><source srcset="assets/granolita.avif" type="image/avif"><img src="assets/granolita.webp" alt="Granolita — exterior entrance" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/granolita-2.avif" type="image/avif"><img src="assets/gallery/granolita-2.webp" alt="Granolita — monolithic bar" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/granolita-3.avif" type="image/avif"><img src="assets/gallery/granolita-3.webp" alt="Granolita — café seating and light" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/granolita-4.avif" type="image/avif"><img src="assets/gallery/granolita-4.webp" alt="Granolita — branded wall and shelving" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/granolita-5.avif" type="image/avif"><img src="assets/gallery/granolita-5.webp" alt="Granolita — interior detail" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/granolita-6.avif" type="image/avif"><img src="assets/gallery/granolita-6.webp" alt="Granolita — space overview" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/granolita-7.avif" type="image/avif"><img src="assets/gallery/granolita-7.webp" alt="Granolita — packaging" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/granolita-8.avif" type="image/avif"><img src="assets/gallery/granolita-8.webp" alt="Granolita — branding" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/granolita-9.avif" type="image/avif"><img src="assets/gallery/granolita-9.webp" alt="Granolita — signage" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/granolita.webp" alt="Granolita — exterior entrance" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/granolita-2.webp" alt="Granolita — monolithic bar" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/granolita-3.webp" alt="Granolita — café seating and light" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/granolita-4.webp" alt="Granolita — branded wall and shelving" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/granolita-5.webp" alt="Granolita — interior detail" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/granolita-6.webp" alt="Granolita — space overview" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/granolita-7.webp" alt="Granolita — packaging" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/granolita-8.webp" alt="Granolita — branding" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/granolita-9.webp" alt="Granolita — signage" loading="lazy" decoding="async"></picture>
       </div>
       <div class="row">
         <div class="num meta">N° 04 / 08</div>
@@ -957,14 +1116,14 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <!-- 05 Selva -->
     <article class="work" data-screen-label="Work · Selva">
       <div class="frame">
-        <picture><source srcset="assets/selva.avif" type="image/avif"><img src="assets/selva.webp" alt="Selva Hotel — reception lobby" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/selva-2.avif" type="image/avif"><img src="assets/gallery/selva-2.webp" alt="Selva Hotel — atrium" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/selva-3.avif" type="image/avif"><img src="assets/gallery/selva-3.webp" alt="Selva Hotel — courtyard" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/selva-4.avif" type="image/avif"><img src="assets/gallery/selva-4.webp" alt="Selva Hotel — spa pool" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/selva-5.avif" type="image/avif"><img src="assets/gallery/selva-5.webp" alt="Selva Hotel — suite" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/selva-6.avif" type="image/avif"><img src="assets/gallery/selva-6.webp" alt="Selva Hotel — terrace" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/selva-7.avif" type="image/avif"><img src="assets/gallery/selva-7.webp" alt="Selva Hotel — garden" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/selva-8.avif" type="image/avif"><img src="assets/gallery/selva-8.webp" alt="Selva Hotel — pool area" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/selva.webp" alt="Selva Hotel — reception lobby" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/selva-2.webp" alt="Selva Hotel — atrium" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/selva-3.webp" alt="Selva Hotel — courtyard" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/selva-4.webp" alt="Selva Hotel — spa pool" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/selva-5.webp" alt="Selva Hotel — suite" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/selva-6.webp" alt="Selva Hotel — terrace" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/selva-7.webp" alt="Selva Hotel — garden" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/selva-8.webp" alt="Selva Hotel — pool area" loading="lazy" decoding="async"></picture>
       </div>
       <div class="row">
         <div class="num meta">N° 05 / 08</div>
@@ -981,13 +1140,13 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <!-- 06 Norrsken -->
     <article class="work" data-bleed="asym-right" data-screen-label="Work · Norrsken">
       <div class="frame">
-        <picture><source srcset="assets/norrsken.avif" type="image/avif"><img src="assets/norrsken.webp" alt="Norrsken Office — open plan workspace" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/norrsken-2.avif" type="image/avif"><img src="assets/gallery/norrsken-2.webp" alt="Norrsken Office — kitchen and break area" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/norrsken-3.avif" type="image/avif"><img src="assets/gallery/norrsken-3.webp" alt="Norrsken Office — acoustic pod" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/norrsken-4.avif" type="image/avif"><img src="assets/gallery/norrsken-4.webp" alt="Norrsken Office — meeting room" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/norrsken-5.avif" type="image/avif"><img src="assets/gallery/norrsken-5.webp" alt="Norrsken Office — lounge" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/norrsken-6.avif" type="image/avif"><img src="assets/gallery/norrsken-6.webp" alt="Norrsken Office — detail" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/norrsken-7.avif" type="image/avif"><img src="assets/gallery/norrsken-7.webp" alt="Norrsken Office — corridor" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/norrsken.webp" alt="Norrsken Office — open plan workspace" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/norrsken-2.webp" alt="Norrsken Office — kitchen and break area" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/norrsken-3.webp" alt="Norrsken Office — acoustic pod" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/norrsken-4.webp" alt="Norrsken Office — meeting room" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/norrsken-5.webp" alt="Norrsken Office — lounge" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/norrsken-6.webp" alt="Norrsken Office — detail" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/norrsken-7.webp" alt="Norrsken Office — corridor" loading="lazy" decoding="async"></picture>
       </div>
       <div class="row">
         <div class="num meta">N° 06 / 08</div>
@@ -1004,12 +1163,12 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <!-- 07 V1 -->
     <article class="work" data-bleed="asym-left" data-screen-label="Work · V1">
       <div class="frame">
-        <picture><source srcset="assets/v1.avif" type="image/avif"><img src="assets/v1.webp" alt="V1 Boutique — living room" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/v1-2.avif" type="image/avif"><img src="assets/gallery/v1-2.webp" alt="V1 Boutique — bedroom" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/v1-3.avif" type="image/avif"><img src="assets/gallery/v1-3.webp" alt="V1 Boutique — kitchen" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/v1-4.avif" type="image/avif"><img src="assets/gallery/v1-4.webp" alt="V1 Boutique — entrance" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/v1-5.avif" type="image/avif"><img src="assets/gallery/v1-5.webp" alt="V1 Boutique — bathroom" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/v1-6.avif" type="image/avif"><img src="assets/gallery/v1-6.webp" alt="V1 Boutique — terrace" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/v1.webp" alt="V1 Boutique — living room" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/v1-2.webp" alt="V1 Boutique — bedroom" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/v1-3.webp" alt="V1 Boutique — kitchen" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/v1-4.webp" alt="V1 Boutique — entrance" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/v1-5.webp" alt="V1 Boutique — bathroom" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/v1-6.webp" alt="V1 Boutique — terrace" loading="lazy" decoding="async"></picture>
       </div>
       <div class="row">
         <div class="num meta">N° 07 / 08</div>
@@ -1025,11 +1184,11 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <!-- 08 K12 -->
     <article class="work" data-screen-label="Work · K12">
       <div class="frame">
-        <picture><source srcset="assets/k12.avif" type="image/avif"><img src="assets/k12.webp" alt="K12 — living area" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/k12-2.avif" type="image/avif"><img src="assets/gallery/k12-2.webp" alt="K12 — dining area" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/k12-3.avif" type="image/avif"><img src="assets/gallery/k12-3.webp" alt="K12 — bedroom" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/k12-4.avif" type="image/avif"><img src="assets/gallery/k12-4.webp" alt="K12 — kitchen" loading="lazy" decoding="async"></picture>
-        <picture><source srcset="assets/gallery/k12-5.avif" type="image/avif"><img src="assets/gallery/k12-5.webp" alt="K12 — detail" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/k12.webp" alt="K12 — living area" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/k12-2.webp" alt="K12 — dining area" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/k12-3.webp" alt="K12 — bedroom" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/k12-4.webp" alt="K12 — kitchen" loading="lazy" decoding="async"></picture>
+        <picture><img src="assets/gallery/k12-5.webp" alt="K12 — detail" loading="lazy" decoding="async"></picture>
       </div>
       <div class="row">
         <div class="num meta">N° 08 / 08</div>
@@ -1041,6 +1200,24 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
         </div>
       </div>
     </article>
+  </div>
+</section>
+
+<!-- ─── GALLERY REVIEW ──────────────────────────────────── -->
+<section id="gallery-review" class="review-gallery" data-screen-label="02B Gallery Review">
+  <header class="sec-head">
+    <div class="kicker meta" data-i18n="gallery_kicker" data-gr="Gallery review" data-en="Gallery review">Gallery review</div>
+    <h2>
+      <span data-i18n="gallery_h2_1" data-gr="Επιλεγμένα έργα" data-en="Selected projects">Επιλεγμένα έργα</span>
+      <span class="em" data-i18n="gallery_h2_2" data-gr=" που ταιριάζουν στην Ελλάδα" data-en=" curated for Greece"> που ταιριάζουν στην Ελλάδα</span>
+      <span class="pale" data-i18n="gallery_h2_3" data-gr=" και στο διεθνές κοινό." data-en=" and international clients."> και στο διεθνές κοινό.</span>
+    </h2>
+  </header>
+  <p class="gallery-intro" data-i18n="gallery_intro" data-gr="Όχι πλήρες αρχείο. Μια αυστηρή επιλογή από έργα που δείχνουν την πλήρη εμπειρία EOLOS: χώρος, brand, web και εμπορική παρουσία για την ελληνική αγορά." data-en="Not a full archive. A tight selection of work that shows the full EOLOS experience: space, brand, web and commercial presence for the Greek market.">Όχι πλήρες αρχείο. Μια αυστηρή επιλογή από έργα που δείχνουν την πλήρη εμπειρία EOLOS: χώρος, brand, web και εμπορική παρουσία για την ελληνική αγορά.</p>
+  <div id="review-filters" class="review-filters" aria-label="Gallery filters"></div>
+  <div id="review-grid" class="review-grid"></div>
+  <div id="review-more" class="review-more">
+    <button type="button" id="review-more-btn" data-i18n="gallery_more" data-gr="Περισσότερα έργα" data-en="Show more projects">Περισσότερα έργα</button>
   </div>
 </section>
 
@@ -1288,6 +1465,16 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   </div>
 </aside>
 
+<div id="review-lightbox" class="review-lightbox" data-open="false" aria-hidden="true">
+  <button type="button" class="close" aria-label="Close">×</button>
+  <button type="button" class="prev" aria-label="Previous">‹</button>
+  <figure>
+    <img id="review-lightbox-img" src="" alt="">
+    <figcaption id="review-lightbox-caption"></figcaption>
+  </figure>
+  <button type="button" class="next" aria-label="Next">›</button>
+</div>
+
 <!-- ─── BEHAVIOUR ────────────────────────────────────────── -->
 <script>
 (function(){
@@ -1443,6 +1630,287 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       body.dataset.tweaksOpen = body.dataset.tweaksOpen === "true" ? "false" : "true";
     }
   });
+
+  /* ── review gallery ───────────────────────────────────── */
+  const REVIEW_FILTERS = [
+    { key: "all", gr: "Όλα", en: "All" },
+    { key: "full", gr: "Full experience", en: "Full experience" },
+    { key: "greek-web", gr: "Ελληνικά brands & web", en: "Greek brands & web" },
+    { key: "athens-assets", gr: "Athens assets", en: "Athens assets" }
+  ];
+  const REVIEW_PROJECTS = [
+    {
+      img: "assets/granolita.webp",
+      cats: ["full"],
+      tagGr: "Granolita / χώρος · branding · web",
+      tagEn: "Granolita / space · branding · web",
+      titleGr: "Πλήρης εμπορική εμπειρία",
+      titleEn: "Complete commercial experience"
+    },
+    {
+      img: "assets/gallery/granolita-2.webp",
+      cats: ["full"],
+      tagGr: "Granolita / interior",
+      tagEn: "Granolita / interior",
+      titleGr: "Ο χώρος ως brand",
+      titleEn: "The space as a brand"
+    },
+    {
+      img: "assets/gallery/granolita-4.webp",
+      cats: ["full"],
+      tagGr: "Granolita / retail language",
+      tagEn: "Granolita / retail language",
+      titleGr: "Σήμανση, υλικά και εμπειρία",
+      titleEn: "Signage, materials and experience"
+    },
+    {
+      img: "assets/gallery/granolita-7.webp",
+      cats: ["full"],
+      tagGr: "Granolita / packaging",
+      tagEn: "Granolita / packaging",
+      titleGr: "Brand εφαρμογές",
+      titleEn: "Brand applications"
+    },
+    {
+      img: "assets/gallery/granolita-8.webp",
+      cats: ["full"],
+      tagGr: "Granolita / identity",
+      tagEn: "Granolita / identity",
+      titleGr: "Ταυτότητα με εμπορική μνήμη",
+      titleEn: "Identity with commercial recall"
+    },
+    {
+      img: "assets/gallery/granolita-9.webp",
+      cats: ["full"],
+      tagGr: "Granolita / signage",
+      tagEn: "Granolita / signage",
+      titleGr: "Λεπτομέρεια που μένει",
+      titleEn: "Detail that stays"
+    },
+    {
+      img: "assets/preview-gallery/hellasreform-gr.webp",
+      cats: ["greek-web"],
+      tagGr: "HellasReform.gr / ελληνικό brand web",
+      tagEn: "HellasReform.gr / Greek brand web",
+      titleGr: "Ψηφιακή παρουσία για την ελληνική αγορά",
+      titleEn: "Digital presence for the Greek market"
+    },
+    {
+      img: "assets/preview-gallery/hellasreform-gr-mobile.webp",
+      cats: ["greek-web"],
+      tagGr: "HellasReform.gr / mobile",
+      tagEn: "HellasReform.gr / mobile",
+      titleGr: "Γρήγορη επαφή από κινητό",
+      titleEn: "Fast mobile contact"
+    },
+    {
+      img: "assets/preview-gallery/wolfblanc-gr.webp",
+      cats: ["greek-web"],
+      tagGr: "Wolfblanc.gr / αρχιτεκτονική Ελλάδα",
+      tagEn: "Wolfblanc.gr / architecture Greece",
+      titleGr: "Τοπικό SEO και premium παρουσία",
+      titleEn: "Local SEO and premium presence"
+    },
+    {
+      img: "assets/preview-gallery/wolfblanc-gr-mobile.webp",
+      cats: ["greek-web"],
+      tagGr: "Wolfblanc.gr / mobile system",
+      tagEn: "Wolfblanc.gr / mobile system",
+      titleGr: "Εμπειρία μικρής οθόνης",
+      titleEn: "Small-screen experience"
+    },
+    {
+      img: "assets/preview-gallery/wolfblanc-com.webp",
+      cats: ["greek-web"],
+      tagGr: "Wolfblanc.com / international system",
+      tagEn: "Wolfblanc.com / international system",
+      titleGr: "Διεθνής ταυτότητα, καθαρή δομή",
+      titleEn: "International identity, clear structure"
+    },
+    {
+      img: "assets/preview-gallery/wolfblanc-com-mobile.webp",
+      cats: ["greek-web"],
+      tagGr: "Wolfblanc.com / mobile",
+      tagEn: "Wolfblanc.com / mobile",
+      titleGr: "Διεθνής παρουσία σε κινητό",
+      titleEn: "International presence on mobile"
+    },
+    {
+      img: "assets/k38.webp",
+      cats: ["athens-assets"],
+      tagGr: "K38 / Αθήνα investment asset",
+      tagEn: "K38 / Athens investment asset",
+      titleGr: "Ακίνητο που διαβάζεται εμπορικά",
+      titleEn: "An asset read commercially"
+    },
+    {
+      img: "assets/gallery/k38-2.webp",
+      cats: ["athens-assets"],
+      tagGr: "K38 / hospitality potential",
+      tagEn: "K38 / hospitality potential",
+      titleGr: "Ταράτσα, φως και εμπειρία διαμονής",
+      titleEn: "Terrace, light and stay experience"
+    },
+    {
+      img: "assets/gallery/k38-5.webp",
+      cats: ["athens-assets"],
+      tagGr: "K38 / apartment staging",
+      tagEn: "K38 / apartment staging",
+      titleGr: "Κατοίκηση με επενδυτική λογική",
+      titleEn: "Living with investment logic"
+    },
+    {
+      img: "assets/k12.webp",
+      cats: ["athens-assets"],
+      tagGr: "K12 / short-term rental",
+      tagEn: "K12 / short-term rental",
+      titleGr: "Βελτιστοποίηση τουριστικής μίσθωσης",
+      titleEn: "Short-term rental optimization"
+    },
+    {
+      img: "assets/gallery/k12-2.webp",
+      cats: ["athens-assets"],
+      tagGr: "K12 / interior clarity",
+      tagEn: "K12 / interior clarity",
+      titleGr: "Καθαρή εικόνα για κράτηση",
+      titleEn: "Clear image for booking"
+    },
+    {
+      img: "assets/a75.webp",
+      cats: ["athens-assets"],
+      tagGr: "A75 / premium asset",
+      tagEn: "A75 / premium asset",
+      titleGr: "Premium αναβάθμιση ακινήτου",
+      titleEn: "Premium asset upgrade"
+    },
+    {
+      img: "assets/gallery/a75-3.webp",
+      cats: ["athens-assets"],
+      tagGr: "A75 / residential hospitality",
+      tagEn: "A75 / residential hospitality",
+      titleGr: "Άνεση που φωτογραφίζεται σωστά",
+      titleEn: "Comfort that photographs correctly"
+    },
+    {
+      img: "assets/v1.webp",
+      cats: ["athens-assets"],
+      tagGr: "V1 / boutique stay",
+      tagEn: "V1 / boutique stay",
+      titleGr: "Boutique εμπειρία διαμονής",
+      titleEn: "Boutique stay experience"
+    },
+    {
+      img: "assets/gallery/v1-2.webp",
+      cats: ["athens-assets"],
+      tagGr: "V1 / detail",
+      tagEn: "V1 / detail",
+      titleGr: "Λεπτομέρεια για μικρό χώρο",
+      titleEn: "Detail for a compact space"
+    }
+  ];
+  const reviewState = { filter: "all", shown: 9, list: REVIEW_PROJECTS };
+  const reviewFilters = document.getElementById("review-filters");
+  const reviewGrid = document.getElementById("review-grid");
+  const reviewMore = document.getElementById("review-more");
+  const reviewMoreBtn = document.getElementById("review-more-btn");
+  const reviewLb = document.getElementById("review-lightbox");
+  const reviewLbImg = document.getElementById("review-lightbox-img");
+  const reviewLbCaption = document.getElementById("review-lightbox-caption");
+  let reviewLbIndex = 0;
+
+  function reviewText(item, key){
+    return STATE.lang === "gr" ? item[key + "Gr"] : item[key + "En"];
+  }
+  function reviewFilterLabel(filter){
+    return STATE.lang === "gr" ? filter.gr : filter.en;
+  }
+  function getReviewList(){
+    if (reviewState.filter === "all") return REVIEW_PROJECTS;
+    return REVIEW_PROJECTS.filter(item => item.cats.includes(reviewState.filter));
+  }
+  function renderReviewFilters(){
+    if (!reviewFilters) return;
+    reviewFilters.innerHTML = "";
+    REVIEW_FILTERS.forEach(filter => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "review-filter";
+      btn.textContent = reviewFilterLabel(filter);
+      btn.setAttribute("aria-pressed", String(filter.key === reviewState.filter));
+      btn.addEventListener("click", () => {
+        reviewState.filter = filter.key;
+        reviewState.shown = 9;
+        renderReviewGallery();
+      });
+      reviewFilters.appendChild(btn);
+    });
+  }
+  function renderReviewGallery(){
+    if (!reviewGrid || !reviewMore || !reviewMoreBtn) return;
+    renderReviewFilters();
+    reviewState.list = getReviewList();
+    const visible = reviewState.list.slice(0, reviewState.shown);
+    reviewGrid.innerHTML = "";
+    visible.forEach((item, idx) => {
+      const card = document.createElement("article");
+      card.className = "review-card";
+      const title = reviewText(item, "title");
+      const tag = reviewText(item, "tag");
+      card.innerHTML = `<img src="${item.img}" alt="${title}" loading="lazy" decoding="async"><div class="review-meta"><span>${tag}</span><h3>${title}</h3></div>`;
+      card.addEventListener("click", () => openReviewLightbox(idx));
+      reviewGrid.appendChild(card);
+    });
+    reviewMore.style.display = reviewState.shown < reviewState.list.length ? "flex" : "none";
+    reviewMoreBtn.textContent = STATE.lang === "gr" ? "Περισσότερα έργα" : "Show more projects";
+  }
+  function openReviewLightbox(idx){
+    reviewLbIndex = idx;
+    updateReviewLightbox();
+    reviewLb.dataset.open = "true";
+    reviewLb.setAttribute("aria-hidden", "false");
+    body.style.overflow = "hidden";
+  }
+  function closeReviewLightbox(){
+    reviewLb.dataset.open = "false";
+    reviewLb.setAttribute("aria-hidden", "true");
+    body.style.overflow = "";
+  }
+  function moveReviewLightbox(dir){
+    reviewLbIndex = (reviewLbIndex + dir + reviewState.list.length) % reviewState.list.length;
+    updateReviewLightbox();
+  }
+  function updateReviewLightbox(){
+    const item = reviewState.list[reviewLbIndex];
+    const title = reviewText(item, "title");
+    reviewLbImg.src = item.img;
+    reviewLbImg.alt = title;
+    reviewLbCaption.textContent = `${reviewText(item, "tag")} · ${title}`;
+  }
+  if (reviewMoreBtn) {
+    reviewMoreBtn.addEventListener("click", () => {
+      reviewState.shown += 9;
+      renderReviewGallery();
+    });
+  }
+  if (reviewLb) {
+    reviewLb.querySelector(".close").addEventListener("click", closeReviewLightbox);
+    reviewLb.querySelector(".prev").addEventListener("click", () => moveReviewLightbox(-1));
+    reviewLb.querySelector(".next").addEventListener("click", () => moveReviewLightbox(1));
+    reviewLb.addEventListener("click", e => {
+      if (e.target === reviewLb) closeReviewLightbox();
+    });
+    document.addEventListener("keydown", e => {
+      if (reviewLb.dataset.open !== "true") return;
+      if (e.key === "Escape") closeReviewLightbox();
+      if (e.key === "ArrowLeft") moveReviewLightbox(-1);
+      if (e.key === "ArrowRight") moveReviewLightbox(1);
+    });
+  }
+  const applyWithoutReviewGallery = apply;
+  apply = function(){
+    applyWithoutReviewGallery();
+    renderReviewGallery();
+  };
 
   /* ── initial apply ────────────────────────────────────── */
   apply();
