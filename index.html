@@ -21,13 +21,13 @@
 <meta property="og:title"       content="EOLOS DESIGN LAB — Εμπορικό Design Studio στην Αθήνα" />
 <meta property="og:description" content="Εσωτερικοί χώροι, branding, web design, οπτικοποίηση και διαχείριση έργου για ξενοδοχεία, εστιατόρια, γραφεία, retail και wellness στην Αθήνα." />
 <meta property="og:site_name"   content="EOLOS DESIGN LAB" />
-<meta property="og:image"       content="https://eoloslab.gr/assets/granolita.webp" />
+<meta property="og:image"       content="https://eoloslab.gr/assets/work/dterra-01.webp" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="800" />
 <meta name="twitter:card"       content="summary_large_image" />
 <meta name="twitter:title"      content="EOLOS DESIGN LAB — Εμπορικό Design Studio στην Αθήνα" />
 <meta name="twitter:description" content="Εσωτερικοί χώροι, branding, web design, οπτικοποίηση και project management για επιχειρήσεις στην Αθήνα και την Ελλάδα." />
-<meta name="twitter:image"      content="https://eoloslab.gr/assets/granolita.webp" />
+<meta name="twitter:image"      content="https://eoloslab.gr/assets/work/dterra-01.webp" />
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R5M0RRBSRM"></script>
@@ -41,8 +41,8 @@
   "@id": "https://eoloslab.gr/#business",
   "name": "EOLOS DESIGN LAB",
   "url": "https://eoloslab.gr/",
-  "logo": "https://eoloslab.gr/assets/granolita.webp",
-  "image": "https://eoloslab.gr/assets/granolita.webp",
+  "logo": "https://eoloslab.gr/assets/work/dterra-01.webp",
+  "image": "https://eoloslab.gr/assets/work/dterra-01.webp",
   "description": "Εμπορικό design studio στην Αθήνα για εσωτερικούς χώρους, branding, web design, οπτικοποίηση και διαχείριση έργου για ξενοδοχεία, εστιατόρια, γραφεία, retail και wellness.",
   "address": {
     "@type": "PostalAddress",
@@ -107,7 +107,7 @@
 }
 </script>
 
-<link rel="preload" as="image" href="assets/dterra-hero.webp" type="image/webp" />
+<link rel="preload" as="image" href="assets/work/dterra-01.webp" type="image/webp" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -115,7 +115,7 @@
 <style>
 /* ─────────────────────────────────────────────────────────
    eolos design lab — gr
-   tokens • chrome • hero • marquee • work • services •
+   tokens • chrome • hero • gallery • services •
    manifesto • locations • contact • footer • tweaks panel
    ───────────────────────────────────────────────────────── */
 :root{
@@ -402,27 +402,6 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
   text-transform: uppercase;
 }
 
-/* ─── Marquee ─── */
-.marquee{
-  position: relative;
-  padding: 18px 0;
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-  overflow: hidden;
-  white-space: nowrap;
-  background: var(--bg);
-}
-.marquee .track{ display: inline-flex; animation: scroll 50s linear infinite; }
-.marquee .track > span{
-  display: inline-flex; align-items: center; gap: 28px;
-  padding-right: 28px;
-  font-family: var(--f-display); font-style: italic;
-  font-size: clamp(24px, 2.4vw, 36px);
-  color: var(--ink-soft);
-}
-.marquee .dot{ width: 6px; height: 6px; background: var(--accent); border-radius: 999px; }
-@keyframes scroll{ to { transform: translateX(-50%); } }
-
 /* ─── Section header ─── */
 .sec-head{
   display: grid;
@@ -443,74 +422,6 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
 }
 .sec-head h2 .em { font-style: italic; color: var(--ink-soft); }
 .sec-head h2 .pale { color: var(--ink-faint); }
-
-/* ─── Work ─── */
-.work-list{ display: flex; flex-direction: column; }
-.work{
-  position: relative;
-  border-top: 1px solid var(--rule);
-  overflow: hidden;
-}
-.work:last-child{ border-bottom: 1px solid var(--rule); }
-.work .frame{
-  position: relative; overflow: hidden;
-  background: var(--bg-2);
-  aspect-ratio: 16 / 10;
-}
-.work .frame img{
-  position: absolute; inset: 0;
-  width: 100%; height: 100%; object-fit: cover;
-  opacity: 0;
-  transition: opacity 1200ms ease, transform 6000ms cubic-bezier(.2,.7,.2,1), filter 1200ms ease;
-  filter: saturate(0.94) brightness(0.94);
-  transform: scale(1.04);
-}
-.work .frame img.active{
-  opacity: 1;
-  transform: scale(1);
-}
-.work:hover .frame img.active{ filter: saturate(1.02) brightness(1); }
-.work .frame .stamp{
-  position: absolute; left: 18px; top: 18px;
-  padding: 7px 10px; background: rgba(0,0,0,0.45);
-  color: #fff;
-  font-family: var(--f-mono); font-size: var(--t-meta);
-  letter-spacing: 0.10em; text-transform: uppercase;
-  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-}
-
-.work .row{
-  display: grid;
-  grid-template-columns: 100px 1fr auto;
-  align-items: end;
-  gap: clamp(16px, 3vw, 48px);
-  padding: clamp(22px, 3vw, 40px) var(--pad-x);
-}
-.work .row .num { color: var(--ink-mute); }
-.work .row .title{
-  font-family: var(--f-display);
-  font-size: var(--t-h3);
-  line-height: 1.0;
-  letter-spacing: -0.012em;
-}
-.work .row .title em { color: var(--ink-mute); font-style: italic; }
-.work .row .meta-r{ display: flex; gap: 14px; align-items: center; color: var(--ink-mute); flex-wrap: wrap; justify-content: flex-end; }
-.work .row .meta-r .pill{
-  border: 1px solid var(--rule);
-  padding: 6px 12px; border-radius: 999px;
-}
-@media (max-width: 760px){
-  .work .row { grid-template-columns: auto 1fr; }
-  .work .row .meta-r{ grid-column: 1 / -1; justify-content: flex-start; }
-}
-
-/* asymmetric variants */
-.work[data-bleed="asym-right"] .frame{ margin-left: 24vw; aspect-ratio: 5 / 4; }
-.work[data-bleed="asym-left"]  .frame{ margin-right: 24vw; aspect-ratio: 5 / 4; }
-@media (max-width: 900px){
-  .work[data-bleed="asym-right"] .frame,
-  .work[data-bleed="asym-left"]  .frame{ margin-left: 0; margin-right: 0; aspect-ratio: 16 / 10; }
-}
 
 /* ─── Review gallery ─── */
 .review-gallery{
@@ -672,32 +583,6 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
   .review-lightbox .prev{ left: calc(50% - 52px); }
   .review-lightbox .next{ right: calc(50% - 52px); }
 }
-
-/* layout: marquee scroll-snap */
-[data-layout="marquee"] .work-list{
-  flex-direction: row;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 16px;
-  padding: 0 var(--pad-x) 40px;
-}
-[data-layout="marquee"] .work{
-  flex: 0 0 70vw;
-  scroll-snap-align: start;
-  border: 0;
-}
-[data-layout="marquee"] .work:last-child{ border-bottom: 0; }
-[data-layout="marquee"] .work .frame{
-  margin: 0 !important; aspect-ratio: 16 / 11 !important;
-}
-[data-layout="marquee"] .work .row{
-  grid-template-columns: 1fr auto; padding: 16px 0 0;
-}
-[data-layout="marquee"] .work .row .num { display: none; }
-[data-layout="marquee"] .work .row .title { font-size: clamp(24px, 2.4vw, 32px); }
-[data-layout="marquee"] .work-list::-webkit-scrollbar{ height: 6px; }
-[data-layout="marquee"] .work-list::-webkit-scrollbar-track{ background: transparent; }
-[data-layout="marquee"] .work-list::-webkit-scrollbar-thumb{ background: var(--rule); border-radius: 4px; }
 
 /* ─── Services ─── */
 .services{ border-top: 1px solid var(--rule); }
@@ -928,8 +813,7 @@ body[data-tweaks-open="true"] #tweaks{ display: block; }
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "lang": "gr",
   "ground": "light",
-  "display": "dmserif",
-  "layout": "marquee"
+  "display": "dmserif"
 }/*EDITMODE-END*/;
 </script>
 
@@ -987,7 +871,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     </div>
     <div class="hero-plate">
       <picture>
-        <img src="assets/dterra-hero.webp" alt="Dterra — bistro interior" fetchpriority="high" decoding="async">
+        <img src="assets/work/dterra-01.webp" alt="Dterra — bistro interior" fetchpriority="high" decoding="async">
       </picture>
     </div>
   </div>
@@ -1002,211 +886,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   </div>
 </section>
 
-<!-- ─── MARQUEE ───────────────────────────────────────────── -->
-<div class="marquee" aria-hidden="true">
-  <div class="track" id="marquee-track">
-    <!-- populated by JS to ensure seamless loop -->
-  </div>
-</div>
-
-<!-- ─── WORK ──────────────────────────────────────────────── -->
-<section id="work" data-screen-label="02 Work">
+<!-- ─── WORK GRID ─────────────────────────────────────────── -->
+<section id="work" class="review-gallery" data-screen-label="02 Work Grid">
   <header class="sec-head">
-    <div class="kicker meta" data-i18n="work_kicker" data-gr="Έργα" data-en="Work">Έργα</div>
-    <h2>
-      <span data-i18n="work_h2_1" data-gr="Χώροι, brands και web" data-en="Spaces, brands and web">Χώροι, brands και web</span>
-      <span class="em" data-i18n="work_h2_2" data-gr=" σχεδιασμένα να αποδίδουν" data-en="designed to perform"> σχεδιασμένα να αποδίδουν</span>
-      <span class="pale" data-i18n="work_h2_3" data-gr=" εμπορικά." data-en="commercially."> εμπορικά.</span>
-    </h2>
-  </header>
-
-  <div class="work-list" id="work-list">
-
-    <!-- 01 K38 -->
-    <article class="work" data-screen-label="Work · K38">
-      <div class="frame">
-        <picture><img src="assets/k38.webp" alt="K38 — open plan living and kitchen" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/k38-2.webp" alt="K38 — rooftop terrace Athens" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/k38-3.webp" alt="K38 — materials board" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/k38-4.webp" alt="K38 — console and painting detail" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/k38-5.webp" alt="K38 — dining area" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/k38-6.webp" alt="K38 — bedroom" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/k38-7.webp" alt="K38 — terrace detail" loading="lazy" decoding="async"></picture>
-      </div>
-      <div class="row">
-        <div class="num meta">N° 01 / 08</div>
-        <h3 class="title">
-          <span data-i18n="w1_t1">K38</span>
-        </h3>
-        <div class="meta-r">
-          <span class="pill" data-i18n="w1_kind" data-gr="Προσαρμογή Ακινήτου BTR" data-en="BTR Asset Adaptation">Προσαρμογή Ακινήτου BTR</span>
-        </div>
-      </div>
-    </article>
-
-    <!-- 02 Dterra -->
-    <article class="work" data-bleed="asym-right" data-screen-label="Work · Dterra">
-      <div class="frame">
-        <picture><img src="assets/dterra.webp" alt="Bistró Dterra — restaurant interior" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/dterra-2.webp" alt="Dterra — dining room" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/dterra-3.webp" alt="Dterra — bar detail" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/dterra-4.webp" alt="Dterra — terrace" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/dterra-5.webp" alt="Dterra — entrance" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/dterra-6.webp" alt="Dterra — lighting detail" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/dterra-7.webp" alt="Dterra — table setting" loading="lazy" decoding="async"></picture>
-      </div>
-      <div class="row">
-        <div class="num meta">N° 02 / 08</div>
-        <h3 class="title">
-          <span data-i18n="w2_t1">Bistró</span>
-          <em data-i18n="w2_t2"> Dterra</em>
-        </h3>
-        <div class="meta-r">
-          <span class="pill" data-i18n="w2_kind" data-gr="Εστιατόριο · Interior Design & Branding" data-en="Restaurant · Interior Design &amp; Branding">Εστιατόριο · Interior Design & Branding</span>
-        </div>
-      </div>
-    </article>
-
-    <!-- 03 A75 -->
-    <article class="work" data-screen-label="Work · A75">
-      <div class="frame">
-        <picture><img src="assets/a75.webp" alt="A75 — living room" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/a75-2.webp" alt="A75 — dining area" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/a75-3.webp" alt="A75 — bedroom" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/a75-4.webp" alt="A75 — kitchen" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/a75-5.webp" alt="A75 — terrace" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/a75-6.webp" alt="A75 — detail" loading="lazy" decoding="async"></picture>
-      </div>
-      <div class="row">
-        <div class="num meta">N° 03 / 08</div>
-        <h3 class="title">
-          <span data-i18n="w3_t1">A75</span>
-        </h3>
-        <div class="meta-r">
-          <span class="pill" data-i18n="w3_kind" data-gr="Επανατοποθέτηση Premium Ακινήτου" data-en="Premium Asset Repositioning">Επανατοποθέτηση Premium Ακινήτου</span>
-        </div>
-      </div>
-    </article>
-
-    <!-- 04 Granolita -->
-    <article class="work" data-bleed="asym-left" data-screen-label="Work · Granolita">
-      <div class="frame">
-        <picture><img src="assets/granolita.webp" alt="Granolita — exterior entrance" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/granolita-2.webp" alt="Granolita — monolithic bar" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/granolita-3.webp" alt="Granolita — café seating and light" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/granolita-4.webp" alt="Granolita — branded wall and shelving" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/granolita-5.webp" alt="Granolita — interior detail" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/granolita-6.webp" alt="Granolita — space overview" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/granolita-7.webp" alt="Granolita — packaging" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/granolita-8.webp" alt="Granolita — branding" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/granolita-9.webp" alt="Granolita — signage" loading="lazy" decoding="async"></picture>
-      </div>
-      <div class="row">
-        <div class="num meta">N° 04 / 08</div>
-        <h3 class="title">
-          <span data-i18n="w4_t1">Granolita</span>
-          <em data-i18n="w4_t2"> Coffee Brand</em>
-        </h3>
-        <div class="meta-r">
-          <span class="pill" data-i18n="w4_kind" data-gr="Interior Design · Branding · Web" data-en="Interior Design · Branding · Web">Interior Design · Branding · Web</span>
-        </div>
-      </div>
-    </article>
-
-    <!-- 05 Selva -->
-    <article class="work" data-screen-label="Work · Selva">
-      <div class="frame">
-        <picture><img src="assets/selva.webp" alt="Selva Hotel — reception lobby" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/selva-2.webp" alt="Selva Hotel — atrium" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/selva-3.webp" alt="Selva Hotel — courtyard" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/selva-4.webp" alt="Selva Hotel — spa pool" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/selva-5.webp" alt="Selva Hotel — suite" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/selva-6.webp" alt="Selva Hotel — terrace" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/selva-7.webp" alt="Selva Hotel — garden" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/selva-8.webp" alt="Selva Hotel — pool area" loading="lazy" decoding="async"></picture>
-      </div>
-      <div class="row">
-        <div class="num meta">N° 05 / 08</div>
-        <h3 class="title">
-          <span data-i18n="w5_t1">Selva</span>
-          <em data-i18n="w5_t2"> Hotel</em>
-        </h3>
-        <div class="meta-r">
-          <span class="pill" data-i18n="w5_kind" data-gr="Hotel · Interior Design · Branding" data-en="Hotel · Interior · Branding">Hotel · Interior Design · Branding</span>
-        </div>
-      </div>
-    </article>
-
-    <!-- 06 Norrsken -->
-    <article class="work" data-bleed="asym-right" data-screen-label="Work · Norrsken">
-      <div class="frame">
-        <picture><img src="assets/norrsken.webp" alt="Norrsken Office — open plan workspace" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/norrsken-2.webp" alt="Norrsken Office — kitchen and break area" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/norrsken-3.webp" alt="Norrsken Office — acoustic pod" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/norrsken-4.webp" alt="Norrsken Office — meeting room" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/norrsken-5.webp" alt="Norrsken Office — lounge" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/norrsken-6.webp" alt="Norrsken Office — detail" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/norrsken-7.webp" alt="Norrsken Office — corridor" loading="lazy" decoding="async"></picture>
-      </div>
-      <div class="row">
-        <div class="num meta">N° 06 / 08</div>
-        <h3 class="title">
-          <span data-i18n="w6_t1">Norrsken</span>
-          <em data-i18n="w6_t2"> Office</em>
-        </h3>
-        <div class="meta-r">
-          <span class="pill" data-i18n="w6_kind" data-gr="Γραφεία · Interior Design · Workplace Strategy" data-en="Office · Interior Design · Workplace Strategy">Γραφεία · Interior Design · Workplace Strategy</span>
-        </div>
-      </div>
-    </article>
-
-    <!-- 07 V1 -->
-    <article class="work" data-bleed="asym-left" data-screen-label="Work · V1">
-      <div class="frame">
-        <picture><img src="assets/v1.webp" alt="V1 Boutique — living room" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/v1-2.webp" alt="V1 Boutique — bedroom" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/v1-3.webp" alt="V1 Boutique — kitchen" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/v1-4.webp" alt="V1 Boutique — entrance" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/v1-5.webp" alt="V1 Boutique — bathroom" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/v1-6.webp" alt="V1 Boutique — terrace" loading="lazy" decoding="async"></picture>
-      </div>
-      <div class="row">
-        <div class="num meta">N° 07 / 08</div>
-        <h3 class="title">
-          <span data-i18n="w7_t1">V1</span>
-        </h3>
-        <div class="meta-r">
-          <span class="pill" data-i18n="w7_kind" data-gr="Boutique Μονάδα Επένδυσης" data-en="Boutique Investment Unit">Boutique Μονάδα Επένδυσης</span>
-        </div>
-      </div>
-    </article>
-
-    <!-- 08 K12 -->
-    <article class="work" data-screen-label="Work · K12">
-      <div class="frame">
-        <picture><img src="assets/k12.webp" alt="K12 — living area" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/k12-2.webp" alt="K12 — dining area" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/k12-3.webp" alt="K12 — bedroom" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/k12-4.webp" alt="K12 — kitchen" loading="lazy" decoding="async"></picture>
-        <picture><img src="assets/gallery/k12-5.webp" alt="K12 — detail" loading="lazy" decoding="async"></picture>
-      </div>
-      <div class="row">
-        <div class="num meta">N° 08 / 08</div>
-        <h3 class="title">
-          <span data-i18n="w8_t1">K12</span>
-        </h3>
-        <div class="meta-r">
-          <span class="pill" data-i18n="w8_kind" data-gr="Βελτιστοποίηση Τουριστικής Μίσθωσης" data-en="Short-term Rental Optimization">Βελτιστοποίηση Τουριστικής Μίσθωσης</span>
-        </div>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- ─── GALLERY REVIEW ──────────────────────────────────── -->
-<section id="gallery-review" class="review-gallery" data-screen-label="02B Gallery Review">
-  <header class="sec-head">
-    <div class="kicker meta" data-i18n="gallery_kicker" data-gr="Gallery review" data-en="Gallery review">Gallery review</div>
+    <div class="kicker meta" data-i18n="gallery_kicker" data-gr="Έργα" data-en="Work">Έργα</div>
     <h2>
       <span data-i18n="gallery_h2_1" data-gr="Επιλεγμένα έργα" data-en="Selected projects">Επιλεγμένα έργα</span>
       <span class="em" data-i18n="gallery_h2_2" data-gr=" που ταιριάζουν στην Ελλάδα" data-en=" curated for Greece"> που ταιριάζουν στην Ελλάδα</span>
@@ -1456,13 +1139,6 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       <button data-val="dmserif">DM Serif</button>
     </div>
   </div>
-  <div class="group">
-    <div class="lab">Work Layout</div>
-    <div class="seg" data-key="layout">
-      <button data-val="stacked">Stacked</button>
-      <button data-val="marquee">Marquee</button>
-    </div>
-  </div>
 </aside>
 
 <div id="review-lightbox" class="review-lightbox" data-open="false" aria-hidden="true">
@@ -1610,19 +1286,6 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   }
   updateClocks(); setInterval(updateClocks, 30 * 1000);
 
-  /* ── marquee population ───────────────────────────────── */
-  const MARQ_EN = ["Commercial Interior Design", "Complete Experience", "Renovation & Project Management", "Commercial Branding", "Web Design", "Creative Direction", "Visualization"];
-  const MARQ_GR = ["Εμπορικός Σχεδιασμός Εσωτερικών Χώρων", "Ολοκληρωμένη Εμπειρία", "Ανακαίνιση & Διαχείριση Έργου", "Εμπορικό Branding", "Web Design", "Δημιουργική Διεύθυνση", "Οπτικοποίηση"];
-  function renderMarquee(){
-    const track = document.getElementById("marquee-track");
-    const items = (STATE.lang === "gr") ? MARQ_GR : MARQ_EN;
-    const piece = items.map(t => `<span>${t}<span class="dot"></span></span>`).join("");
-    track.innerHTML = piece + piece; // duplicate for seamless loop
-  }
-  // re-render marquee on lang change
-  const _apply = apply;
-  apply = function(){ _apply(); renderMarquee(); };
-
   /* ── keyboard shortcut: ? to toggle tweaks ───────────── */
   document.addEventListener("keydown", (e) => {
     if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
@@ -1634,179 +1297,38 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   /* ── review gallery ───────────────────────────────────── */
   const REVIEW_FILTERS = [
     { key: "all", gr: "Όλα", en: "All" },
-    { key: "full", gr: "Full experience", en: "Full experience" },
+    { key: "commercial-spaces", gr: "Εμπορικοί χώροι", en: "Commercial spaces" },
     { key: "greek-web", gr: "Ελληνικά brands & web", en: "Greek brands & web" },
     { key: "athens-assets", gr: "Athens assets", en: "Athens assets" }
   ];
   const REVIEW_PROJECTS = [
-    {
-      img: "assets/granolita.webp",
-      cats: ["full"],
-      tagGr: "Granolita / χώρος · branding · web",
-      tagEn: "Granolita / space · branding · web",
-      titleGr: "Πλήρης εμπορική εμπειρία",
-      titleEn: "Complete commercial experience"
-    },
-    {
-      img: "assets/gallery/granolita-2.webp",
-      cats: ["full"],
-      tagGr: "Granolita / interior",
-      tagEn: "Granolita / interior",
-      titleGr: "Ο χώρος ως brand",
-      titleEn: "The space as a brand"
-    },
-    {
-      img: "assets/gallery/granolita-4.webp",
-      cats: ["full"],
-      tagGr: "Granolita / retail language",
-      tagEn: "Granolita / retail language",
-      titleGr: "Σήμανση, υλικά και εμπειρία",
-      titleEn: "Signage, materials and experience"
-    },
-    {
-      img: "assets/gallery/granolita-7.webp",
-      cats: ["full"],
-      tagGr: "Granolita / packaging",
-      tagEn: "Granolita / packaging",
-      titleGr: "Brand εφαρμογές",
-      titleEn: "Brand applications"
-    },
-    {
-      img: "assets/gallery/granolita-8.webp",
-      cats: ["full"],
-      tagGr: "Granolita / identity",
-      tagEn: "Granolita / identity",
-      titleGr: "Ταυτότητα με εμπορική μνήμη",
-      titleEn: "Identity with commercial recall"
-    },
-    {
-      img: "assets/gallery/granolita-9.webp",
-      cats: ["full"],
-      tagGr: "Granolita / signage",
-      tagEn: "Granolita / signage",
-      titleGr: "Λεπτομέρεια που μένει",
-      titleEn: "Detail that stays"
-    },
-    {
-      img: "assets/preview-gallery/hellasreform-gr.webp",
-      cats: ["greek-web"],
-      tagGr: "HellasReform.gr / ελληνικό brand web",
-      tagEn: "HellasReform.gr / Greek brand web",
-      titleGr: "Ψηφιακή παρουσία για την ελληνική αγορά",
-      titleEn: "Digital presence for the Greek market"
-    },
-    {
-      img: "assets/preview-gallery/hellasreform-gr-mobile.webp",
-      cats: ["greek-web"],
-      tagGr: "HellasReform.gr / mobile",
-      tagEn: "HellasReform.gr / mobile",
-      titleGr: "Γρήγορη επαφή από κινητό",
-      titleEn: "Fast mobile contact"
-    },
-    {
-      img: "assets/preview-gallery/wolfblanc-gr.webp",
-      cats: ["greek-web"],
-      tagGr: "Wolfblanc.gr / αρχιτεκτονική Ελλάδα",
-      tagEn: "Wolfblanc.gr / architecture Greece",
-      titleGr: "Τοπικό SEO και premium παρουσία",
-      titleEn: "Local SEO and premium presence"
-    },
-    {
-      img: "assets/preview-gallery/wolfblanc-gr-mobile.webp",
-      cats: ["greek-web"],
-      tagGr: "Wolfblanc.gr / mobile system",
-      tagEn: "Wolfblanc.gr / mobile system",
-      titleGr: "Εμπειρία μικρής οθόνης",
-      titleEn: "Small-screen experience"
-    },
-    {
-      img: "assets/preview-gallery/wolfblanc-com.webp",
-      cats: ["greek-web"],
-      tagGr: "Wolfblanc.com / international system",
-      tagEn: "Wolfblanc.com / international system",
-      titleGr: "Διεθνής ταυτότητα, καθαρή δομή",
-      titleEn: "International identity, clear structure"
-    },
-    {
-      img: "assets/preview-gallery/wolfblanc-com-mobile.webp",
-      cats: ["greek-web"],
-      tagGr: "Wolfblanc.com / mobile",
-      tagEn: "Wolfblanc.com / mobile",
-      titleGr: "Διεθνής παρουσία σε κινητό",
-      titleEn: "International presence on mobile"
-    },
-    {
-      img: "assets/k38.webp",
-      cats: ["athens-assets"],
-      tagGr: "K38 / Αθήνα investment asset",
-      tagEn: "K38 / Athens investment asset",
-      titleGr: "Ακίνητο που διαβάζεται εμπορικά",
-      titleEn: "An asset read commercially"
-    },
-    {
-      img: "assets/gallery/k38-2.webp",
-      cats: ["athens-assets"],
-      tagGr: "K38 / hospitality potential",
-      tagEn: "K38 / hospitality potential",
-      titleGr: "Ταράτσα, φως και εμπειρία διαμονής",
-      titleEn: "Terrace, light and stay experience"
-    },
-    {
-      img: "assets/gallery/k38-5.webp",
-      cats: ["athens-assets"],
-      tagGr: "K38 / apartment staging",
-      tagEn: "K38 / apartment staging",
-      titleGr: "Κατοίκηση με επενδυτική λογική",
-      titleEn: "Living with investment logic"
-    },
-    {
-      img: "assets/k12.webp",
-      cats: ["athens-assets"],
-      tagGr: "K12 / short-term rental",
-      tagEn: "K12 / short-term rental",
-      titleGr: "Βελτιστοποίηση τουριστικής μίσθωσης",
-      titleEn: "Short-term rental optimization"
-    },
-    {
-      img: "assets/gallery/k12-2.webp",
-      cats: ["athens-assets"],
-      tagGr: "K12 / interior clarity",
-      tagEn: "K12 / interior clarity",
-      titleGr: "Καθαρή εικόνα για κράτηση",
-      titleEn: "Clear image for booking"
-    },
-    {
-      img: "assets/a75.webp",
-      cats: ["athens-assets"],
-      tagGr: "A75 / premium asset",
-      tagEn: "A75 / premium asset",
-      titleGr: "Premium αναβάθμιση ακινήτου",
-      titleEn: "Premium asset upgrade"
-    },
-    {
-      img: "assets/gallery/a75-3.webp",
-      cats: ["athens-assets"],
-      tagGr: "A75 / residential hospitality",
-      tagEn: "A75 / residential hospitality",
-      titleGr: "Άνεση που φωτογραφίζεται σωστά",
-      titleEn: "Comfort that photographs correctly"
-    },
-    {
-      img: "assets/v1.webp",
-      cats: ["athens-assets"],
-      tagGr: "V1 / boutique stay",
-      tagEn: "V1 / boutique stay",
-      titleGr: "Boutique εμπειρία διαμονής",
-      titleEn: "Boutique stay experience"
-    },
-    {
-      img: "assets/gallery/v1-2.webp",
-      cats: ["athens-assets"],
-      tagGr: "V1 / detail",
-      tagEn: "V1 / detail",
-      titleGr: "Λεπτομέρεια για μικρό χώρο",
-      titleEn: "Detail for a compact space"
-    }
+    { img: "assets/work/eoloslab-gr.webp", cats: ["greek-web"], tagGr: "EOLOSLAB.GR / ελληνικό studio site", tagEn: "EOLOSLAB.GR / Greek studio site", titleGr: "Τοπική παρουσία για design, brand και web", titleEn: "Local presence for design, brand and web" },
+    { img: "assets/work/eoloslab-gr-mobile.webp", cats: ["greek-web"], tagGr: "EOLOSLAB.GR / mobile", tagEn: "EOLOSLAB.GR / mobile", titleGr: "Καθαρή εμπειρία σε κινητό", titleEn: "Clear mobile experience" },
+    { img: "assets/work/hellasreform-brand.webp", cats: ["greek-web"], tagGr: "HellasReform / brand system", tagEn: "HellasReform / brand system", titleGr: "Brand εικόνα για ανακαινίσεις στην Ελλάδα", titleEn: "Brand image for renovation in Greece" },
+    { img: "assets/work/hellasreform-gr.webp", cats: ["greek-web"], tagGr: "HellasReform.gr / ελληνικό brand web", tagEn: "HellasReform.gr / Greek brand web", titleGr: "Ψηφιακή παρουσία για την ελληνική αγορά", titleEn: "Digital presence for the Greek market" },
+    { img: "assets/work/hellasreform-gr-mobile.webp", cats: ["greek-web"], tagGr: "HellasReform.gr / mobile", tagEn: "HellasReform.gr / mobile", titleGr: "Γρήγορη επαφή από κινητό", titleEn: "Fast mobile contact" },
+    { img: "assets/work/wolfblanc-gr.webp", cats: ["greek-web"], tagGr: "Wolfblanc.gr / αρχιτεκτονική Ελλάδα", tagEn: "Wolfblanc.gr / architecture Greece", titleGr: "Τοπικό SEO και premium παρουσία", titleEn: "Local SEO and premium presence" },
+    { img: "assets/work/wolfblanc-gr-mobile.webp", cats: ["greek-web"], tagGr: "Wolfblanc.gr / mobile system", tagEn: "Wolfblanc.gr / mobile system", titleGr: "Εμπειρία μικρής οθόνης", titleEn: "Small-screen experience" },
+    { img: "assets/work/wolfblanc-com.webp", cats: ["greek-web"], tagGr: "Wolfblanc.com / international system", tagEn: "Wolfblanc.com / international system", titleGr: "Διεθνής ταυτότητα, καθαρή δομή", titleEn: "International identity, clear structure" },
+    { img: "assets/work/wolfblanc-com-mobile.webp", cats: ["greek-web"], tagGr: "Wolfblanc.com / mobile", tagEn: "Wolfblanc.com / mobile", titleGr: "Διεθνής παρουσία σε κινητό", titleEn: "International presence on mobile" },
+    { img: "assets/work/dterra-01.webp", cats: ["commercial-spaces"], tagGr: "Dterra / bistro interior", tagEn: "Dterra / bistro interior", titleGr: "Εμπορικός χώρος με ατμόσφαιρα", titleEn: "Commercial space with atmosphere" },
+    { img: "assets/work/dterra-02.webp", cats: ["commercial-spaces"], tagGr: "Dterra / hospitality", tagEn: "Dterra / hospitality", titleGr: "Χώρος που υποστηρίζει την εμπειρία", titleEn: "A space that supports the experience" },
+    { img: "assets/work/dterra-03.webp", cats: ["commercial-spaces"], tagGr: "Dterra / restaurant design", tagEn: "Dterra / restaurant design", titleGr: "Υλικά, φως και εμπορική μνήμη", titleEn: "Materials, light and commercial recall" },
+    { img: "assets/work/k38-hero.webp", cats: ["athens-assets"], tagGr: "K38 / Athens asset", tagEn: "K38 / Athens asset", titleGr: "Ακίνητο που διαβάζεται εμπορικά", titleEn: "An asset read commercially" },
+    { img: "assets/work/k38-03.webp", cats: ["athens-assets"], tagGr: "K38 / apartment staging", tagEn: "K38 / apartment staging", titleGr: "Κατοίκηση με επενδυτική λογική", titleEn: "Living with investment logic" },
+    { img: "assets/work/k38-04.webp", cats: ["athens-assets"], tagGr: "K38 / hospitality potential", tagEn: "K38 / hospitality potential", titleGr: "Εικόνα που στηρίζει απόφαση", titleEn: "Imagery that supports decisions" },
+    { img: "assets/work/k12-02.webp", cats: ["athens-assets"], tagGr: "K12 / short-term rental", tagEn: "K12 / short-term rental", titleGr: "Βελτιστοποίηση τουριστικής μίσθωσης", titleEn: "Short-term rental optimization" },
+    { img: "assets/work/k12-04.webp", cats: ["athens-assets"], tagGr: "K12 / interior clarity", tagEn: "K12 / interior clarity", titleGr: "Καθαρή εικόνα για κράτηση", titleEn: "Clear image for booking" },
+    { img: "assets/work/k12-05.webp", cats: ["athens-assets"], tagGr: "K12 / detail", tagEn: "K12 / detail", titleGr: "Λεπτομέρεια που ανεβάζει αξία", titleEn: "Detail that lifts value" },
+    { img: "assets/work/a75-08.webp", cats: ["athens-assets"], tagGr: "A75 / premium asset", tagEn: "A75 / premium asset", titleGr: "Premium αναβάθμιση ακινήτου", titleEn: "Premium asset upgrade" },
+    { img: "assets/work/a75-09.webp", cats: ["athens-assets"], tagGr: "A75 / residential hospitality", tagEn: "A75 / residential hospitality", titleGr: "Άνεση που φωτογραφίζεται σωστά", titleEn: "Comfort that photographs correctly" },
+    { img: "assets/work/a75-06.webp", cats: ["athens-assets"], tagGr: "A75 / interior", tagEn: "A75 / interior", titleGr: "Χώρος με καθαρή εμπορική ανάγνωση", titleEn: "Space with clear commercial reading" },
+    { img: "assets/work/v1-01.webp", cats: ["athens-assets"], tagGr: "V1 / boutique stay", tagEn: "V1 / boutique stay", titleGr: "Boutique εμπειρία διαμονής", titleEn: "Boutique stay experience" },
+    { img: "assets/work/v1-03.webp", cats: ["athens-assets"], tagGr: "V1 / compact apartment", tagEn: "V1 / compact apartment", titleGr: "Μικρός χώρος, καθαρή εμπειρία", titleEn: "Compact space, clear experience" },
+    { img: "assets/work/v1-05.webp", cats: ["athens-assets"], tagGr: "V1 / detail", tagEn: "V1 / detail", titleGr: "Λεπτομέρεια για μικρό χώρο", titleEn: "Detail for a compact space" },
+    { img: "assets/work/norrsken-15.webp", cats: ["commercial-spaces"], tagGr: "Norrsken / office", tagEn: "Norrsken / office", titleGr: "Γραφειακό περιβάλλον με ταυτότητα", titleEn: "Office environment with identity" },
+    { img: "assets/work/norrsken-14.webp", cats: ["commercial-spaces"], tagGr: "Norrsken / workplace", tagEn: "Norrsken / workplace", titleGr: "Workplace με σαφή χρήση", titleEn: "Workplace with clear use" },
+    { img: "assets/work/norrsken-04.webp", cats: ["commercial-spaces"], tagGr: "Norrsken / interior", tagEn: "Norrsken / interior", titleGr: "Λεπτομέρειες που οργανώνουν τον χώρο", titleEn: "Details that organize the space" }
   ];
   const reviewState = { filter: "all", shown: 9, list: REVIEW_PROJECTS };
   const reviewFilters = document.getElementById("review-filters");
@@ -1915,19 +1437,6 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   /* ── initial apply ────────────────────────────────────── */
   apply();
 
-  /* ── gallery rotation ─────────────────────────────────── */
-  document.querySelectorAll(".work .frame").forEach(frame => {
-    const imgs = Array.from(frame.querySelectorAll("img"));
-    if (!imgs.length) return;
-    imgs[0].classList.add("active");
-    if (imgs.length < 2) return;
-    let idx = 0;
-    setInterval(() => {
-      imgs[idx].classList.remove("active");
-      idx = (idx + 1) % imgs.length;
-      imgs[idx].classList.add("active");
-    }, 4500);
-  });
 })();
 
 // ─── Intake form ───
