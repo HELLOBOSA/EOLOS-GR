@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>EOLOS DESIGN LAB | Αθήνα · Εμπορικός Σχεδιασμός, Branding & Web</title>
+<title>Αθήνα · Εμπορικός Σχεδιασμός, Branding & Web - EOLOS DESIGN LAB</title>
 <meta name="description" content="Εμπορικό design studio στην Αθήνα για εσωτερικούς χώρους, branding, web design και ανακαινίσεις για ξενοδοχεία, εστιατόρια, γραφεία και retail." />
 <link rel="canonical" href="https://eoloslab.gr/" />
 <meta name="theme-color" content="#1a1917">
-<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="alternate" hreflang="el" href="https://eoloslab.gr/" />
 <link rel="alternate" hreflang="x-default" href="https://eoloslab.gr/" />
 <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -18,14 +18,14 @@
 <meta property="og:type"        content="website" />
 <meta property="og:locale"      content="el_GR" />
 <meta property="og:url"         content="https://eoloslab.gr/" />
-<meta property="og:title"       content="EOLOS DESIGN LAB | Εμπορικό Design Studio στην Αθήνα" />
+<meta property="og:title"       content="Εμπορικό Design Studio στην Αθήνα - EOLOS DESIGN LAB" />
 <meta property="og:description" content="Εσωτερικοί χώροι, branding, web design, οπτικοποίηση και διαχείριση έργου για ξενοδοχεία, εστιατόρια, γραφεία, retail και wellness στην Αθήνα." />
 <meta property="og:site_name"   content="EOLOS DESIGN LAB" />
 <meta property="og:image"       content="https://eoloslab.gr/assets/work/dterra-01.webp" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="800" />
 <meta name="twitter:card"       content="summary_large_image" />
-<meta name="twitter:title"      content="EOLOS DESIGN LAB | Εμπορικό Design Studio στην Αθήνα" />
+<meta name="twitter:title"      content="Εμπορικό Design Studio στην Αθήνα - EOLOS DESIGN LAB" />
 <meta name="twitter:description" content="Εσωτερικοί χώροι, branding, web design, οπτικοποίηση και project management για επιχειρήσεις στην Αθήνα και την Ελλάδα." />
 <meta name="twitter:image"      content="https://eoloslab.gr/assets/work/dterra-01.webp" />
 
@@ -434,168 +434,110 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
 .sec-head h2 .em { font-style: italic; color: var(--ink-soft); }
 .sec-head h2 .pale { color: var(--ink-faint); }
 
-/* ─── Review gallery ─── */
-.review-gallery{
-  border-top: 1px solid var(--rule);
-  padding-bottom: clamp(58px, 9vh, 118px);
-}
-.review-gallery .gallery-intro{
-  max-width: 70ch;
-  margin: -22px var(--pad-x) clamp(34px, 5vw, 58px) calc(var(--pad-x) + min(34vw, 520px));
-  color: var(--ink-mute);
-  font-size: clamp(15px, 1.25vw, 18px);
-  line-height: 1.7;
-}
-.review-filters{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding: 0 var(--pad-x) clamp(24px, 4vw, 42px);
-}
-.review-filter{
-  border: 1px solid var(--rule);
-  border-radius: 999px;
-  padding: 9px 13px;
-  color: var(--ink-mute);
-  font-family: var(--f-mono);
-  font-size: var(--t-meta);
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
-  transition: color 220ms ease, border-color 220ms ease, background 220ms ease;
-}
-.review-filter:hover,
-.review-filter[aria-pressed="true"]{
-  color: var(--bg);
-  background: var(--ink);
-  border-color: var(--ink);
-}
-.review-grid{
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1px;
-  background: var(--rule);
+/* ─── Marquee and work rail ─── */
+.marquee{
+  position: relative;
+  padding: 18px 0;
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
+  overflow: hidden;
+  white-space: nowrap;
+  background: var(--bg);
 }
-.review-card{
+.marquee .track{ display: inline-flex; animation: scroll 50s linear infinite; }
+.marquee .track > span{
+  display: inline-flex;
+  align-items: center;
+  gap: 28px;
+  padding-right: 28px;
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: clamp(24px, 2.4vw, 36px);
+  color: var(--ink-soft);
+}
+.marquee .dot{ width: 6px; height: 6px; background: var(--accent); border-radius: 999px; }
+@keyframes scroll{ to { transform: translateX(-50%); } }
+.work-list{
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0 var(--pad-x) clamp(48px, 8vw, 92px);
+}
+.work{
+  flex: 0 0 min(70vw, 920px);
+  scroll-snap-align: start;
+}
+.work .frame{
   position: relative;
-  aspect-ratio: 4 / 3;
   overflow: hidden;
   background: var(--bg-2);
-  cursor: zoom-in;
-  isolation: isolate;
+  aspect-ratio: 16 / 11;
 }
-.review-card img{
+.work .frame img{
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  display: block;
   object-fit: cover;
-  filter: saturate(.94) brightness(.92);
-  transform: scale(1.01);
-  transition: transform 800ms cubic-bezier(.2,.7,.2,1), filter 600ms ease;
+  opacity: 0;
+  transition: opacity 1200ms ease, transform 6000ms cubic-bezier(.2,.7,.2,1), filter 1200ms ease;
+  filter: saturate(.94) brightness(.94);
+  transform: scale(1.04);
 }
-.review-card:hover img{
-  transform: scale(1.045);
-  filter: saturate(1.03) brightness(1);
+.work .frame img.active{
+  opacity: 1;
+  transform: scale(1);
 }
-.review-meta{
+.work:hover .frame img.active{ filter: saturate(1.02) brightness(1); }
+.work .frame .stamp{
   position: absolute;
-  inset: auto 0 0;
-  padding: 18px;
-  color: #f7f3ed;
-  background: linear-gradient(to top, rgba(15,14,13,.86), rgba(15,14,13,.38) 58%, transparent);
-  z-index: 1;
-}
-.review-meta span{
-  display: block;
-  margin-bottom: 7px;
-  opacity: .76;
+  left: 18px;
+  top: 18px;
+  padding: 7px 10px;
+  background: rgba(0,0,0,.45);
+  color: #fff;
   font-family: var(--f-mono);
   font-size: var(--t-meta);
-  letter-spacing: 0.10em;
+  letter-spacing: .10em;
   text-transform: uppercase;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
-.review-meta h3{
-  max-width: 30ch;
-  font-family: var(--f-display);
-  font-size: clamp(21px, 2.1vw, 34px);
-  line-height: .98;
-  letter-spacing: -0.012em;
-}
-.review-more{
-  display: flex;
-  justify-content: center;
-  padding: clamp(28px, 5vw, 48px) var(--pad-x) 0;
-}
-.review-more button{
-  border: 1px solid var(--ink);
-  border-radius: 999px;
-  padding: 13px 19px;
-  color: var(--ink);
-  font-family: var(--f-mono);
-  font-size: var(--t-meta);
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
-  transition: color 220ms ease, background 220ms ease;
-}
-.review-more button:hover{ color: var(--bg); background: var(--ink); }
-.review-lightbox{
-  position: fixed;
-  inset: 0;
-  z-index: 1200;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: clamp(18px, 4vw, 54px);
-  background: rgba(16,15,14,.94);
-}
-.review-lightbox[data-open="true"]{ display: flex; }
-.review-lightbox figure{
-  width: min(1180px, 92vw);
-  max-height: 88vh;
-  margin: 0;
-}
-.review-lightbox img{
-  display: block;
-  width: 100%;
-  max-height: 78vh;
-  object-fit: contain;
-}
-.review-lightbox figcaption{
-  margin-top: 14px;
-  color: rgba(247,243,237,.72);
-  font-family: var(--f-mono);
-  font-size: var(--t-meta);
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
-}
-.review-lightbox button{
-  position: fixed;
+.work .row{
   display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border: 1px solid rgba(247,243,237,.32);
-  color: rgba(247,243,237,.88);
-  background: rgba(16,15,14,.42);
+  grid-template-columns: 1fr auto;
+  gap: clamp(16px, 3vw, 40px);
+  align-items: start;
+  padding: 16px 0 0;
 }
-.review-lightbox .close{ top: 22px; right: 22px; }
-.review-lightbox .prev{ left: 22px; top: 50%; transform: translateY(-50%); }
-.review-lightbox .next{ right: 22px; top: 50%; transform: translateY(-50%); }
-@media (max-width: 900px){
-  .review-gallery .gallery-intro{ margin: 0 var(--pad-x) 34px; }
-  .review-grid{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+.work .title{
+  margin: 0;
+  font-family: var(--f-display);
+  font-size: clamp(24px, 2.4vw, 34px);
+  line-height: 1;
 }
-@media (max-width: 560px){
-  .review-grid{
-    grid-template-columns: 1fr;
-  }
-  .review-lightbox .prev,
-  .review-lightbox .next{ top: auto; bottom: 18px; transform: none; }
-  .review-lightbox .prev{ left: calc(50% - 52px); }
-  .review-lightbox .next{ right: calc(50% - 52px); }
+.work .title em{ color: var(--ink-mute); font-style: italic; }
+.work .meta-r{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  color: var(--ink-mute);
+}
+.work .pill{
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 6px 12px;
+}
+.work-list::-webkit-scrollbar{ height: 6px; }
+.work-list::-webkit-scrollbar-track{ background: transparent; }
+.work-list::-webkit-scrollbar-thumb{ background: var(--rule); border-radius: 4px; }
+@media (max-width: 760px){
+  .work{ flex-basis: 86vw; }
+  .work .row{ grid-template-columns: 1fr; gap: 12px; }
+  .work .meta-r{ justify-content: flex-start; }
 }
 
 /* ─── Services ─── */
@@ -750,6 +692,75 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
 .foot .right{ text-align: right; }
 @media (max-width: 700px){ .foot{ grid-template-columns: 1fr; } .foot .right, .foot .center{ text-align: left; } .foot .right{ justify-content: flex-start !important; } }
 
+.cookie-banner{
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  z-index: 1200;
+  width: max-content;
+  max-width: calc(100vw - 32px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 8px 10px 8px 16px;
+  border: 1px solid var(--rule);
+  background: color-mix(in oklch, var(--bg) 74%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 999px;
+  color: var(--ink);
+  box-shadow: 0 18px 45px rgba(14,12,10,.08);
+}
+.cookie-banner[hidden]{ display: none; }
+.cookie-copy{ display: flex; align-items: center; gap: 9px; min-width: 0; }
+.cookie-title,
+.cookie-btn{
+  font-family: var(--f-mono);
+  font-size: .6rem;
+  font-weight: 400;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.cookie-link{
+  font-family: var(--f-mono);
+  font-size: .5rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  white-space: nowrap;
+}
+.cookie-link:hover{ color: var(--accent); }
+.cookie-actions{ display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.cookie-btn{
+  color: var(--ink-mute);
+  padding: 6px 9px;
+  border-radius: 999px;
+  transition: color .25s, background .25s;
+}
+.cookie-btn:hover,
+.cookie-btn.accept:hover{ color: var(--accent); }
+.cookie-btn.accept{ background: var(--accent); color: var(--bg); }
+@media(max-width:520px){
+  .cookie-banner{ bottom: 16px; max-width: calc(100vw - 20px); padding: 8px 9px 8px 12px; gap: 7px; }
+  .cookie-copy{ gap: 7px; }
+  .cookie-title,
+  .cookie-btn{ font-size: .5rem; letter-spacing: .12em; }
+  .cookie-link{ font-size: .46rem; letter-spacing: .12em; }
+  .cookie-actions{ gap: 6px; }
+  .cookie-btn{ padding: 6px 7px; }
+  .cookie-btn.accept{ padding: 6px 9px; }
+}
+@media(max-width:380px){
+  .cookie-banner{ flex-wrap: wrap; border-radius: 18px; padding: 9px 10px; row-gap: 8px; }
+  .cookie-copy,
+  .cookie-actions{ justify-content: center; }
+}
+
 /* helper utility */
 .gap-y-lg{ height: clamp(60px, 10vh, 140px); }
 
@@ -770,7 +781,9 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
   <nav>
     <a href="#work" class="tab"        data-i18n="nav_work" data-gr="Έργα" data-en="Work">Έργα</a>
     <a href="#services" class="tab"    data-i18n="nav_services" data-gr="Υπηρεσίες" data-en="Services">Υπηρεσίες</a>
-    <a href="#studio" class="tab"      data-i18n="nav_studio" data-gr="Στούντιο" data-en="Studio">Στούντιο</a>
+    <a href="sixnes-erotiseis/" class="tab" data-i18n="nav_faq" data-gr="FAQ" data-en="FAQ">FAQ</a>
+    <a href="journal/" class="tab"     data-i18n="nav_journal" data-gr="Journal" data-en="Journal">Journal</a>
+    <a href="legal/" class="tab"       data-i18n="nav_legal" data-gr="Legal" data-en="Legal">Legal</a>
     <a href="#contact" class="tab"     data-i18n="nav_contact" data-gr="Επικοινωνία" data-en="Contact">Επικοινωνία</a>
   </nav>
   <div class="right">
@@ -792,7 +805,9 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
     <a href="#work" data-i18n="mob_nav_work" data-gr="Έργα" data-en="Work">Έργα</a>
     <a href="#services" data-i18n="mob_nav_services" data-gr="Υπηρεσίες" data-en="Services">Υπηρεσίες</a>
-    <a href="#studio" data-i18n="mob_nav_studio" data-gr="Στούντιο" data-en="Studio">Στούντιο</a>
+    <a href="sixnes-erotiseis/" data-i18n="mob_nav_faq" data-gr="FAQ" data-en="FAQ">FAQ</a>
+    <a href="journal/" data-i18n="mob_nav_journal" data-gr="Journal" data-en="Journal">Journal</a>
+    <a href="legal/" data-i18n="mob_nav_legal" data-gr="Legal" data-en="Legal">Legal</a>
     <a href="#contact" data-i18n="mob_nav_contact" data-gr="Επικοινωνία" data-en="Contact">Επικοινωνία</a>
   </div>
 </header>
@@ -852,21 +867,103 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
   </article>
 </section>
 
-<!-- ─── WORK GRID ─────────────────────────────────────────── -->
-<section id="work" class="review-gallery" data-screen-label="02 Work Grid">
+<!-- ─── MARQUEE ───────────────────────────────────────────── -->
+<div class="marquee" aria-hidden="true">
+  <div class="track" id="marquee-track"></div>
+</div>
+
+<!-- ─── WORK ──────────────────────────────────────────────── -->
+<section id="work" data-screen-label="02 Work">
   <header class="sec-head">
-    <div class="kicker meta" data-i18n="gallery_kicker" data-gr="Έργα" data-en="Work">Έργα</div>
+    <div class="kicker meta" data-i18n="work_kicker" data-gr="Έργα" data-en="Work">Έργα</div>
     <h2>
-      <span data-i18n="gallery_h2_1" data-gr="Επιλεγμένα έργα" data-en="Selected projects">Επιλεγμένα έργα</span>
-      <span class="em" data-i18n="gallery_h2_2" data-gr=" που ταιριάζουν στην Ελλάδα" data-en=" curated for Greece"> που ταιριάζουν στην Ελλάδα</span>
-      <span class="pale" data-i18n="gallery_h2_3" data-gr=" και στο διεθνές κοινό." data-en=" and international clients."> και στο διεθνές κοινό.</span>
+      <span data-i18n="work_h2_1" data-gr="Χώροι, brands και web" data-en="Spaces, brands and web">Χώροι, brands και web</span>
+      <span class="em" data-i18n="work_h2_2" data-gr=" σχεδιασμένα να αποδίδουν" data-en=" designed to perform"> σχεδιασμένα να αποδίδουν</span>
+      <span class="pale" data-i18n="work_h2_3" data-gr=" εμπορικά." data-en=" commercially."> εμπορικά.</span>
     </h2>
   </header>
-  <p class="gallery-intro" data-i18n="gallery_intro" data-gr="Όχι πλήρες αρχείο. Μια αυστηρή επιλογή από έργα που δείχνουν την πλήρη εμπειρία EOLOS: χώρος, brand, web και εμπορική παρουσία για την ελληνική αγορά." data-en="Not a full archive. A tight selection of work that shows the full EOLOS experience: space, brand, web and commercial presence for the Greek market.">Όχι πλήρες αρχείο. Μια αυστηρή επιλογή από έργα που δείχνουν την πλήρη εμπειρία EOLOS: χώρος, brand, web και εμπορική παρουσία για την ελληνική αγορά.</p>
-  <div id="review-filters" class="review-filters" aria-label="Gallery filters"></div>
-  <div id="review-grid" class="review-grid"></div>
-  <div id="review-more" class="review-more">
-    <button type="button" id="review-more-btn" data-i18n="gallery_more" data-gr="Περισσότερα έργα" data-en="Show more projects">Περισσότερα έργα</button>
+  <div class="work-list" id="work-list">
+    <article class="work" data-screen-label="Work · Granolita">
+      <div class="frame">
+        <img src="assets/work/dterra-01.webp" alt="Granolita commercial interior direction" loading="lazy" decoding="async">
+        <img src="assets/work/dterra-02.webp" alt="Granolita dining rhythm and brand atmosphere" loading="lazy" decoding="async">
+        <img src="assets/work/dterra-03.webp" alt="Granolita detail and guest memory" loading="lazy" decoding="async">
+        <span class="stamp">Space · Brand · Web</span>
+      </div>
+      <div class="row">
+        <h3 class="title"><span>Granolita</span><em data-i18n="w_granolita" data-gr=" · πλήρης εμπειρία" data-en=" · complete experience"> · πλήρης εμπειρία</em></h3>
+        <div class="meta-r"><span class="pill">Interior</span><span class="pill">Brand</span><span class="pill">Web</span></div>
+      </div>
+    </article>
+    <article class="work" data-screen-label="Work · EOLOSLAB.GR">
+      <div class="frame">
+        <img src="assets/work/eoloslab-gr.webp" alt="EOLOSLAB.GR desktop website system" loading="lazy" decoding="async">
+        <img src="assets/work/eoloslab-gr-mobile.webp" alt="EOLOSLAB.GR mobile contact path" loading="lazy" decoding="async">
+        <span class="stamp">Greek platform</span>
+      </div>
+      <div class="row">
+        <h3 class="title"><span>EOLOSLAB.GR</span><em data-i18n="w_eolos" data-gr=" · θέση και conversion" data-en=" · positioning and conversion"> · θέση και conversion</em></h3>
+        <div class="meta-r"><span class="pill">Web</span><span class="pill">SEO</span><span class="pill">Greek first</span></div>
+      </div>
+    </article>
+    <article class="work" data-screen-label="Work · HellasReform">
+      <div class="frame">
+        <img src="assets/work/hellasreform-brand.webp" alt="HellasReform brand identity system" loading="lazy" decoding="async">
+        <img src="assets/work/hellasreform-gr.webp" alt="HellasReform Greek website desktop" loading="lazy" decoding="async">
+        <img src="assets/work/hellasreform-gr-mobile.webp" alt="HellasReform Greek website mobile" loading="lazy" decoding="async">
+        <span class="stamp">Local brand</span>
+      </div>
+      <div class="row">
+        <h3 class="title"><span>HellasReform</span><em data-i18n="w_hellas" data-gr=" · εμπιστοσύνη ανακαίνισης" data-en=" · renovation trust"> · εμπιστοσύνη ανακαίνισης</em></h3>
+        <div class="meta-r"><span class="pill">Brand</span><span class="pill">Web</span><span class="pill">Lead path</span></div>
+      </div>
+    </article>
+    <article class="work" data-screen-label="Work · WOLFBLANC.GR">
+      <div class="frame">
+        <img src="assets/work/wolfblanc-gr.webp" alt="WOLFBLANC.GR architecture website desktop" loading="lazy" decoding="async">
+        <img src="assets/work/wolfblanc-gr-mobile.webp" alt="WOLFBLANC.GR architecture website mobile" loading="lazy" decoding="async">
+        <span class="stamp">Architecture authority</span>
+      </div>
+      <div class="row">
+        <h3 class="title"><span>WOLFBLANC.GR</span><em data-i18n="w_wolfgr" data-gr=" · ελληνική αρχιτεκτονική παρουσία" data-en=" · Greek architecture presence"> · ελληνική αρχιτεκτονική παρουσία</em></h3>
+        <div class="meta-r"><span class="pill">SEO</span><span class="pill">Authority</span><span class="pill">Mobile</span></div>
+      </div>
+    </article>
+    <article class="work" data-screen-label="Work · WOLFBLANC.COM">
+      <div class="frame">
+        <img src="assets/work/wolfblanc-com.webp" alt="WOLFBLANC.COM international website desktop" loading="lazy" decoding="async">
+        <img src="assets/work/wolfblanc-com-mobile.webp" alt="WOLFBLANC.COM international website mobile" loading="lazy" decoding="async">
+        <span class="stamp">International layer</span>
+      </div>
+      <div class="row">
+        <h3 class="title"><span>WOLFBLANC.COM</span><em data-i18n="w_wolfcom" data-gr=" · διεθνής δομή" data-en=" · international structure"> · διεθνής δομή</em></h3>
+        <div class="meta-r"><span class="pill">Global</span><span class="pill">Web</span><span class="pill">Brand</span></div>
+      </div>
+    </article>
+    <article class="work" data-screen-label="Work · Athens Assets">
+      <div class="frame">
+        <img src="assets/work/k38-hero.webp" alt="K38 Athens rental asset living area" loading="lazy" decoding="async">
+        <img src="assets/work/a75-09.webp" alt="A75 Athens living and kitchen upgrade" loading="lazy" decoding="async">
+        <img src="assets/work/v1-03.webp" alt="V1 Athens living room for rental asset" loading="lazy" decoding="async">
+        <span class="stamp">Athens assets</span>
+      </div>
+      <div class="row">
+        <h3 class="title"><span data-i18n="w_assets_1" data-gr="Ακίνητα Αθήνας" data-en="Athens assets">Ακίνητα Αθήνας</span><em data-i18n="w_assets_2" data-gr=" · εικόνα που πουλά" data-en=" · images that sell"> · εικόνα που πουλά</em></h3>
+        <div class="meta-r"><span class="pill">Interior</span><span class="pill">Photography</span><span class="pill">Booking</span></div>
+      </div>
+    </article>
+    <article class="work" data-screen-label="Work · Norrsken">
+      <div class="frame">
+        <img src="assets/work/norrsken-15.webp" alt="Norrsken workplace open office" loading="lazy" decoding="async">
+        <img src="assets/work/norrsken-14.webp" alt="Norrsken workplace flexible office" loading="lazy" decoding="async">
+        <img src="assets/work/norrsken-04.webp" alt="Norrsken office kitchen and meeting area" loading="lazy" decoding="async">
+        <span class="stamp">Workplace</span>
+      </div>
+      <div class="row">
+        <h3 class="title"><span>Norrsken</span><em data-i18n="w_norrsken" data-gr=" · γραφείο με ρυθμό" data-en=" · workplace rhythm"> · γραφείο με ρυθμό</em></h3>
+        <div class="meta-r"><span class="pill">Office</span><span class="pill">Flow</span><span class="pill">Experience</span></div>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -1063,24 +1160,25 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
 
 <!-- ─── FOOTER ───────────────────────────────────────────── -->
 <footer class="foot">
-  <div class="left" data-i18n="f_cred" data-gr="Εγγεγραμμένοι στο ΤΕΕ" data-en="TCG Registered">Εγγεγραμμένοι στο ΤΕΕ</div>
-  <div class="center">© 2026 · WEB BY EOLOS</div>
+  <div class="left">© 2026 EOLOS DESIGN LAB · Eggegramenoi ΤΕΕ / TCG REGISTERED · WELL AP</div>
+  <div class="center">WEB BY EOLOS</div>
   <div class="right" style="display:flex;align-items:center;gap:10px;justify-content:flex-end;">
-    <a href="sixnes-erotiseis/" data-i18n="f_faq" data-gr="Συχνές ερωτήσεις" data-en="FAQ">Συχνές ερωτήσεις</a>
-    <a href="journal/" data-i18n="f_journal" data-gr="Journal" data-en="Journal">Journal</a>
+    <span>PART OF</span>
+    <a href="https://wolfblanc.gr/">WOLFBLANC</a>
   </div>
 </footer>
 
 </main>
 
-<div id="review-lightbox" class="review-lightbox" data-open="false" aria-hidden="true">
-  <button type="button" class="close" aria-label="Close">×</button>
-  <button type="button" class="prev" aria-label="Previous">‹</button>
-  <figure>
-    <img id="review-lightbox-img" src="" alt="">
-    <figcaption id="review-lightbox-caption"></figcaption>
-  </figure>
-  <button type="button" class="next" aria-label="Next">›</button>
+<div class="cookie-banner" id="cookie-banner" role="region" aria-label="Ενημέρωση cookies" hidden>
+  <div class="cookie-copy">
+    <span class="cookie-title" data-i18n="cookie_title" data-gr="Χρησιμοποιούμε cookies" data-en="We use cookies">Χρησιμοποιούμε cookies</span>
+    <a class="cookie-link" href="legal/#cookies" data-i18n="cookie_more" data-gr="Περισσότερα" data-en="More info">Περισσότερα</a>
+  </div>
+  <div class="cookie-actions">
+    <button class="cookie-btn" type="button" data-cookie-choice="reject" data-i18n="cookie_reject" data-gr="Απόρριψη" data-en="Reject">Απόρριψη</button>
+    <button class="cookie-btn accept" type="button" data-cookie-choice="accept" data-i18n="cookie_accept" data-gr="Αποδοχή" data-en="Accept">Αποδοχή</button>
+  </div>
 </div>
 
 <!-- ─── BEHAVIOUR ────────────────────────────────────────── -->
@@ -1161,177 +1259,35 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
   }
   updateClocks(); setInterval(updateClocks, 30 * 1000);
 
-  /* ── review gallery ───────────────────────────────────── */
-  const REVIEW_FILTERS = [
-    { key: "all", gr: "Όλα", en: "All" },
-    { key: "commercial-spaces", gr: "Εμπορικοί χώροι", en: "Commercial spaces" },
-    { key: "greek-web", gr: "Ελληνικά brands & web", en: "Greek brands & web" },
-    { key: "athens-assets", gr: "Athens assets", en: "Athens assets" }
-  ];
-  const REVIEW_PROJECTS = [
-    { img: "assets/work/eoloslab-gr.webp", cats: ["greek-web"], tagGr: "EOLOSLAB.GR / website system", tagEn: "EOLOSLAB.GR / website system", titleGr: "Η πρόταση γίνεται σαφής από την πρώτη οθόνη", titleEn: "The offer is clear from the first screen" },
-    { img: "assets/work/eoloslab-gr-mobile.webp", cats: ["greek-web"], tagGr: "EOLOSLAB.GR / mobile contact", tagEn: "EOLOSLAB.GR / mobile contact", titleGr: "Άμεση ανάγνωση και γρήγορη επικοινωνία", titleEn: "Fast reading and quick contact" },
-    { img: "assets/work/hellasreform-brand.webp", cats: ["greek-web"], tagGr: "HellasReform / brand trust", tagEn: "HellasReform / brand trust", titleGr: "Λογότυπο που δείχνει καθαρή κατηγορία", titleEn: "A mark with a clear category" },
-    { img: "assets/work/hellasreform-gr.webp", cats: ["greek-web"], tagGr: "HellasReform.gr / lead website", tagEn: "HellasReform.gr / lead website", titleGr: "Σελίδα φτιαγμένη για αιτήματα ανακαίνισης", titleEn: "A page built for renovation enquiries" },
-    { img: "assets/work/hellasreform-gr-mobile.webp", cats: ["greek-web"], tagGr: "HellasReform.gr / mobile funnel", tagEn: "HellasReform.gr / mobile funnel", titleGr: "Το αίτημα ξεκινά από το κινητό", titleEn: "The enquiry starts on mobile" },
-    { img: "assets/work/wolfblanc-gr.webp", cats: ["greek-web"], tagGr: "Wolfblanc.gr / architecture website", tagEn: "Wolfblanc.gr / architecture website", titleGr: "Ελληνικό SEO με premium εικόνα", titleEn: "Greek SEO with a premium image" },
-    { img: "assets/work/wolfblanc-gr-mobile.webp", cats: ["greek-web"], tagGr: "Wolfblanc.gr / mobile authority", tagEn: "Wolfblanc.gr / mobile authority", titleGr: "Αρχιτεκτονική αξιοπιστία σε μικρή οθόνη", titleEn: "Architectural trust on a small screen" },
-    { img: "assets/work/wolfblanc-com.webp", cats: ["greek-web"], tagGr: "Wolfblanc.com / international platform", tagEn: "Wolfblanc.com / international platform", titleGr: "Διεθνής παρουσία με καθαρή δομή", titleEn: "International presence with clear structure" },
-    { img: "assets/work/wolfblanc-com-mobile.webp", cats: ["greek-web"], tagGr: "Wolfblanc.com / mobile system", tagEn: "Wolfblanc.com / mobile system", titleGr: "Πλοήγηση που κρατά τον πελάτη μέσα", titleEn: "Navigation that keeps the client moving" },
-    { img: "assets/work/dterra-01.webp", cats: ["commercial-spaces"], tagGr: "Dterra / dining room", tagEn: "Dterra / dining room", titleGr: "Ατμόσφαιρα που ανεβάζει τον χρόνο παραμονής", titleEn: "Atmosphere that increases dwell time" },
-    { img: "assets/work/dterra-02.webp", cats: ["commercial-spaces"], tagGr: "Dterra / table rhythm", tagEn: "Dterra / table rhythm", titleGr: "Ροή τραπεζιών με ζεστή εμπορική εικόνα", titleEn: "Table flow with a warm commercial image" },
-    { img: "assets/work/dterra-03.webp", cats: ["commercial-spaces"], tagGr: "Dterra / detail memory", tagEn: "Dterra / detail memory", titleGr: "Λεπτομέρεια που μένει στη μνήμη", titleEn: "A detail guests remember" },
-    { img: "assets/work/k38-hero.webp", cats: ["athens-assets"], tagGr: "K38 / rental asset", tagEn: "K38 / rental asset", titleGr: "Πρώτη εικόνα που στηρίζει κράτηση", titleEn: "First image that supports booking" },
-    { img: "assets/work/k38-03.webp", cats: ["athens-assets"], tagGr: "K38 / bedroom value", tagEn: "K38 / bedroom value", titleGr: "Ήρεμη κατοίκηση με επενδυτική λογική", titleEn: "Calm living with investment logic" },
-    { img: "assets/work/k38-04.webp", cats: ["athens-assets"], tagGr: "K38 / bathroom confidence", tagEn: "K38 / bathroom confidence", titleGr: "Καθαρότητα που μειώνει την αμφιβολία", titleEn: "Clarity that reduces doubt" },
-    { img: "assets/work/k12-02.webp", cats: ["athens-assets"], tagGr: "K12 / compact stay", tagEn: "K12 / compact stay", titleGr: "Μικρό ακίνητο με πλήρη αίσθηση διαμονής", titleEn: "Small asset with a complete stay feel" },
-    { img: "assets/work/k12-04.webp", cats: ["athens-assets"], tagGr: "K12 / kitchen image", tagEn: "K12 / kitchen image", titleGr: "Λειτουργία που διαβάζεται αμέσως", titleEn: "Function read at a glance" },
-    { img: "assets/work/k12-05.webp", cats: ["athens-assets"], tagGr: "K12 / booking detail", tagEn: "K12 / booking detail", titleGr: "Υλικό και φως για καλύτερη φωτογράφιση", titleEn: "Material and light for stronger images" },
-    { img: "assets/work/a75-08.webp", cats: ["athens-assets"], tagGr: "A75 / premium bedroom", tagEn: "A75 / premium bedroom", titleGr: "Αναβάθμιση που φαίνεται πριν την επίσκεψη", titleEn: "Upgrade visible before the visit" },
-    { img: "assets/work/a75-09.webp", cats: ["athens-assets"], tagGr: "A75 / living and kitchen", tagEn: "A75 / living and kitchen", titleGr: "Ενιαίος χώρος με εικόνα υψηλής αξίας", titleEn: "Open living with a high-value image" },
-    { img: "assets/work/a75-06.webp", cats: ["athens-assets"], tagGr: "A75 / warm residence", tagEn: "A75 / warm residence", titleGr: "Κατοικία με αίσθηση φιλοξενίας", titleEn: "A home with hospitality feel" },
-    { img: "assets/work/v1-01.webp", cats: ["athens-assets"], tagGr: "V1 / clean kitchen", tagEn: "V1 / clean kitchen", titleGr: "Λευκή βάση για γρήγορη εμπιστοσύνη", titleEn: "A clean base for quick trust" },
-    { img: "assets/work/v1-03.webp", cats: ["athens-assets"], tagGr: "V1 / living room", tagEn: "V1 / living room", titleGr: "Σαλόνι που δείχνει άνεση και τάξη", titleEn: "Living room that shows comfort and order" },
-    { img: "assets/work/v1-05.webp", cats: ["athens-assets"], tagGr: "V1 / compact bedroom", tagEn: "V1 / compact bedroom", titleGr: "Μικρός χώρος με καθαρή εμπειρία", titleEn: "Compact room with a clear experience" },
-    { img: "assets/work/norrsken-15.webp", cats: ["commercial-spaces"], tagGr: "Norrsken / workplace use", tagEn: "Norrsken / workplace use", titleGr: "Γραφείο που εξηγεί πώς δουλεύει η ομάδα", titleEn: "Office space that explains how the team works" },
-    { img: "assets/work/norrsken-14.webp", cats: ["commercial-spaces"], tagGr: "Norrsken / flexible office", tagEn: "Norrsken / flexible office", titleGr: "Χώρος εργασίας με κίνηση και συγκέντρωση", titleEn: "Workplace with movement and focus" },
-    { img: "assets/work/norrsken-04.webp", cats: ["commercial-spaces"], tagGr: "Norrsken / kitchen and meeting", tagEn: "Norrsken / kitchen and meeting", titleGr: "Η κουζίνα γίνεται σημείο συνεργασίας", titleEn: "The kitchen becomes a collaboration point" }
-  ];
-  function shuffleReview(list){
-    const arr = list.slice();
-    for (let i = arr.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-    return arr;
+  /* ── marquee population ───────────────────────────────── */
+  const MARQ_EN = ["Commercial Interior Design", "Complete Experience", "Renovation & Project Management", "Commercial Branding", "Web Design", "Creative Direction", "Visualization"];
+  const MARQ_GR = ["Εμπορικός Σχεδιασμός Εσωτερικών Χώρων", "Ολοκληρωμένη Εμπειρία", "Ανακαίνιση & Διαχείριση Έργου", "Εμπορικό Branding", "Web Design", "Δημιουργική Διεύθυνση", "Οπτικοποίηση"];
+  function renderMarquee(){
+    const track = document.getElementById("marquee-track");
+    if (!track) return;
+    const items = STATE.lang === "gr" ? MARQ_GR : MARQ_EN;
+    const piece = items.map(t => `<span>${t}<span class="dot"></span></span>`).join("");
+    track.innerHTML = piece + piece;
   }
-  function reviewGroupKey(item){
-    const name = item.img.split("/").pop().replace(/\.webp$/i, "");
-    if (name.startsWith("eoloslab")) return "eoloslab";
-    if (name.startsWith("hellasreform")) return "hellasreform";
-    if (name.startsWith("wolfblanc")) return "wolfblanc";
-    return name.split("-")[0];
-  }
-  function distributeReviewProjects(projects){
-    const grouped = {};
-    projects.forEach(item => {
-      const key = reviewGroupKey(item);
-      (grouped[key] || (grouped[key] = [])).push(item);
-    });
-    let groups = shuffleReview(Object.keys(grouped).map(key => shuffleReview(grouped[key])));
-    const mixed = [];
-    while (groups.length) {
-      groups = shuffleReview(groups);
-      groups.forEach(group => {
-        if (group.length) mixed.push(group.shift());
-      });
-      groups = groups.filter(group => group.length);
-    }
-    return mixed;
-  }
-  const REVIEW_ORDER = distributeReviewProjects(REVIEW_PROJECTS);
-  const reviewState = { filter: "all", shown: 9, list: REVIEW_ORDER };
-  const reviewFilters = document.getElementById("review-filters");
-  const reviewGrid = document.getElementById("review-grid");
-  const reviewMore = document.getElementById("review-more");
-  const reviewMoreBtn = document.getElementById("review-more-btn");
-  const reviewLb = document.getElementById("review-lightbox");
-  const reviewLbImg = document.getElementById("review-lightbox-img");
-  const reviewLbCaption = document.getElementById("review-lightbox-caption");
-  let reviewLbIndex = 0;
 
-  function reviewText(item, key){
-    return STATE.lang === "gr" ? item[key + "Gr"] : item[key + "En"];
-  }
-  function reviewFilterLabel(filter){
-    return STATE.lang === "gr" ? filter.gr : filter.en;
-  }
-  function getReviewList(){
-    if (reviewState.filter === "all") return REVIEW_ORDER;
-    return REVIEW_ORDER.filter(item => item.cats.includes(reviewState.filter));
-  }
-  function renderReviewFilters(){
-    if (!reviewFilters) return;
-    reviewFilters.innerHTML = "";
-    REVIEW_FILTERS.forEach(filter => {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "review-filter";
-      btn.textContent = reviewFilterLabel(filter);
-      btn.setAttribute("aria-pressed", String(filter.key === reviewState.filter));
-      btn.addEventListener("click", () => {
-        reviewState.filter = filter.key;
-        reviewState.shown = 9;
-        renderReviewGallery();
-      });
-      reviewFilters.appendChild(btn);
-    });
-  }
-  function renderReviewGallery(){
-    if (!reviewGrid || !reviewMore || !reviewMoreBtn) return;
-    renderReviewFilters();
-    reviewState.list = getReviewList();
-    const visible = reviewState.list.slice(0, reviewState.shown);
-    reviewGrid.innerHTML = "";
-    visible.forEach((item, idx) => {
-      const card = document.createElement("article");
-      card.className = "review-card";
-      const title = reviewText(item, "title");
-      const tag = reviewText(item, "tag");
-      card.innerHTML = `<img src="${item.img}" alt="${title}" loading="lazy" decoding="async"><div class="review-meta"><span>${tag}</span><h3>${title}</h3></div>`;
-      card.addEventListener("click", () => openReviewLightbox(idx));
-      reviewGrid.appendChild(card);
-    });
-    reviewMore.style.display = reviewState.shown < reviewState.list.length ? "flex" : "none";
-    reviewMoreBtn.textContent = STATE.lang === "gr" ? "Περισσότερα έργα" : "Show more projects";
-  }
-  function openReviewLightbox(idx){
-    reviewLbIndex = idx;
-    updateReviewLightbox();
-    reviewLb.dataset.open = "true";
-    reviewLb.setAttribute("aria-hidden", "false");
-    body.style.overflow = "hidden";
-  }
-  function closeReviewLightbox(){
-    reviewLb.dataset.open = "false";
-    reviewLb.setAttribute("aria-hidden", "true");
-    body.style.overflow = "";
-  }
-  function moveReviewLightbox(dir){
-    reviewLbIndex = (reviewLbIndex + dir + reviewState.list.length) % reviewState.list.length;
-    updateReviewLightbox();
-  }
-  function updateReviewLightbox(){
-    const item = reviewState.list[reviewLbIndex];
-    const title = reviewText(item, "title");
-    reviewLbImg.src = item.img;
-    reviewLbImg.alt = title;
-    reviewLbCaption.textContent = `${reviewText(item, "tag")} · ${title}`;
-  }
-  if (reviewMoreBtn) {
-    reviewMoreBtn.addEventListener("click", () => {
-      reviewState.shown += 9;
-      renderReviewGallery();
-    });
-  }
-  if (reviewLb) {
-    reviewLb.querySelector(".close").addEventListener("click", closeReviewLightbox);
-    reviewLb.querySelector(".prev").addEventListener("click", () => moveReviewLightbox(-1));
-    reviewLb.querySelector(".next").addEventListener("click", () => moveReviewLightbox(1));
-    reviewLb.addEventListener("click", e => {
-      if (e.target === reviewLb) closeReviewLightbox();
-    });
-    document.addEventListener("keydown", e => {
-      if (reviewLb.dataset.open !== "true") return;
-      if (e.key === "Escape") closeReviewLightbox();
-      if (e.key === "ArrowLeft") moveReviewLightbox(-1);
-      if (e.key === "ArrowRight") moveReviewLightbox(1);
-    });
-  }
-  const applyWithoutReviewGallery = apply;
+  /* ── rotating work frames ─────────────────────────────── */
+  document.querySelectorAll(".work .frame").forEach(frame => {
+    const imgs = Array.from(frame.querySelectorAll("img"));
+    if (!imgs.length) return;
+    imgs[0].classList.add("active");
+    if (imgs.length < 2) return;
+    let idx = 0;
+    setInterval(() => {
+      imgs[idx].classList.remove("active");
+      idx = (idx + 1) % imgs.length;
+      imgs[idx].classList.add("active");
+    }, 4500);
+  });
+
+  const applyWithMarquee = apply;
   apply = function(){
-    applyWithoutReviewGallery();
-    renderReviewGallery();
+    applyWithMarquee();
+    renderMarquee();
   };
 
   /* ── initial apply ────────────────────────────────────── */
@@ -1379,6 +1335,42 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
       submitBtn.disabled = false;
       submitBtn.querySelector('span').textContent = 'Submit brief';
     }
+  });
+})();
+
+// ─── Cookie acknowledgement ───
+(function(){
+  const banner = document.getElementById('cookie-banner');
+  if (!banner) return;
+  const storageKey = 'eolos-cookie-choice';
+  const days = 180;
+  const expiry = () => Date.now() + days * 24 * 60 * 60 * 1000;
+  function readChoice(){
+    try {
+      const raw = localStorage.getItem(storageKey);
+      if (!raw) return null;
+      const data = JSON.parse(raw);
+      if (!data.expires || data.expires < Date.now()) {
+        localStorage.removeItem(storageKey);
+        return null;
+      }
+      return data.choice;
+    } catch(e) {
+      localStorage.removeItem(storageKey);
+      return null;
+    }
+  }
+  function closeBanner(choice){
+    localStorage.setItem(storageKey, JSON.stringify({ choice, expires: expiry() }));
+    banner.hidden = true;
+    document.body.classList.remove('cookie-banner-visible');
+  }
+  if (!readChoice()) {
+    banner.hidden = false;
+    document.body.classList.add('cookie-banner-visible');
+  }
+  banner.querySelectorAll('[data-cookie-choice]').forEach(btn => {
+    btn.addEventListener('click', () => closeBanner(btn.getAttribute('data-cookie-choice')));
   });
 })();
 </script>
