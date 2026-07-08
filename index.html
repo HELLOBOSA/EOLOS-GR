@@ -256,12 +256,18 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
   .chrome[data-menu-open="true"] .menu-toggle .bar{ background: transparent; }
   .chrome[data-menu-open="true"] .menu-toggle .bar::before{ top: 0; transform: rotate(45deg); }
   .chrome[data-menu-open="true"] .menu-toggle .bar::after{ top: 0; transform: rotate(-45deg); }
+  .chrome[data-menu-open="true"]{
+    background: var(--bg);
+    border-bottom-color: var(--rule);
+    box-shadow: 0 18px 40px rgba(42,33,27,.08);
+  }
   .mobile-menu{
     grid-column: 1 / -1;
     display: none;
     margin-top: 14px;
     padding-top: 14px;
     border-top: 1px solid var(--rule);
+    background: var(--bg);
   }
   .chrome[data-menu-open="true"] .mobile-menu{ display: grid; }
   .mobile-menu a{
@@ -588,11 +594,14 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
   object-fit: contain;
 }
 .review-lightbox figcaption{
-  margin-top: 14px;
+  max-width: 760px;
+  margin: 16px auto 0;
   color: rgba(247,243,237,.72);
   font-family: var(--f-mono);
   font-size: var(--t-meta);
   letter-spacing: 0.10em;
+  line-height: 1.55;
+  text-align: center;
   text-transform: uppercase;
 }
 .review-lightbox button{
