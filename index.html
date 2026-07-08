@@ -729,6 +729,36 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
   transition: color 200ms ease;
 }
 .contact .lede a.start:hover{ color: var(--accent); }
+.form-intro{
+  scroll-margin-top: 118px;
+  margin-top: 64px;
+  border-top: 1px solid var(--rule);
+  padding-top: 34px;
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: clamp(24px, 5vw, 70px);
+  align-items: end;
+}
+.form-intro h3{
+  margin: 0;
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: clamp(34px, 5vw, 72px);
+  line-height: .96;
+}
+.form-intro p{
+  margin: 0;
+  max-width: 45ch;
+  color: var(--ink-mute);
+  font-size: clamp(16px, 1.4vw, 20px);
+}
+@media(max-width:700px){
+  .form-intro{
+    scroll-margin-top: 96px;
+    grid-template-columns: 1fr;
+    margin-top: 44px;
+  }
+}
 .contact .grid{
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
   border-top: 1px solid var(--rule);
@@ -744,7 +774,7 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
 .contact .grid .cell a:hover{ color: var(--accent); }
 
 /* ─── Intake form ─── */
-.intake-form{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--rule);margin-top:64px;}
+.intake-form{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--rule);margin-top:34px;}
 .intake-form .field{display:flex;flex-direction:column;gap:10px;padding:18px 20px 18px 0;border-bottom:1px solid var(--rule);}
 .intake-form .field:nth-child(2n){padding-left:20px;padding-right:0;border-left:1px solid var(--rule);}
 .intake-form .field.full{grid-column:1/-1;padding-right:0;}
@@ -886,11 +916,11 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
       <span class="sep">/</span>
       <button type="button" data-lang="en" aria-pressed="false">EN</button>
     </span>
-    <a href="#intake-form" class="cta">
+    <a href="#project-brief" class="cta">
       <span data-i18n="cta_label" data-gr="Ξεκινήστε ένα project" data-en="Start a project">Ξεκινήστε ένα project</span>
       <span class="arrow">→</span>
     </a>
-    <a href="#intake-form" class="mobile-contact" data-i18n="mobile_contact" data-gr="Επικ." data-en="Contact">Επικ.</a>
+    <a href="#project-brief" class="mobile-contact" data-i18n="mobile_contact" data-gr="Επικ." data-en="Contact">Επικ.</a>
     <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Μενού" aria-expanded="false" aria-controls="mobile-menu">
       <span class="bar" aria-hidden="true"></span>
     </button>
@@ -929,7 +959,7 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
   <div class="strip">
     <p class="lede" data-i18n="hero_lede"
        data-gr="Η ίδια ομάδα. Χώρος, brand, web.&lt;br&gt;Από την πρώτη μέρα." data-en="The same team. Space, brand, web.&lt;br&gt;From day one.">Η ίδια ομάδα. Χώρος, brand, web.<br>Από την πρώτη μέρα.</p>
-    <a href="#intake-form" class="cta" style="align-self:end;">
+    <a href="#project-brief" class="cta" style="align-self:end;">
       <span data-i18n="cta_label" data-gr="Ξεκινήστε ένα project" data-en="Start a project">Ξεκινήστε ένα project</span>
       <span class="arrow">→</span>
     </a>
@@ -1122,6 +1152,11 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
       <small data-i18n="c_k4" data-gr="Ωράριο" data-en="Hours">Ωράριο</small>
       <div class="big" data-i18n="c_v4" data-gr="Δευ-Παρ · 09:00-18:00 EET" data-en="Mon-Fri · 09:00-18:00 EET">Δευ-Παρ · 09:00-18:00 EET</div>
     </div>
+  </div>
+
+  <div class="form-intro" id="project-brief">
+    <h3 data-i18n="form_intro_title" data-gr="Πείτε μας τι σχεδιάζετε." data-en="Tell us what you are planning.">Πείτε μας τι σχεδιάζετε.</h3>
+    <p data-i18n="form_intro_copy" data-gr="Στείλτε λίγες καθαρές πληροφορίες για χώρο, brand, web ή ανακαίνιση. Θα δούμε το brief και θα σας απαντήσουμε με πρακτικό επόμενο βήμα." data-en="Send a few clear details about space, brand, web or renovation. We will review the brief and reply with a practical next step.">Στείλτε λίγες καθαρές πληροφορίες για χώρο, brand, web ή ανακαίνιση. Θα δούμε το brief και θα σας απαντήσουμε με πρακτικό επόμενο βήμα.</p>
   </div>
 
   <form class="intake-form" id="intake-form" action="https://formspree.io/f/xeedreeq" method="POST">
