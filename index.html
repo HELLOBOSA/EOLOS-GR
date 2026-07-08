@@ -196,7 +196,9 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
   -webkit-backdrop-filter: blur(10px);
 }
 .chrome .wm { display: inline-flex; align-items: center; gap: 12px; color: var(--ink); }
-.chrome .wm .dot { width: 7px; height: 7px; border-radius: 999px; background: var(--accent); }
+.chrome .wm .dot { position: relative; width: 7px; height: 7px; border-radius: 999px; background: var(--accent); flex: 0 0 auto; }
+.chrome .wm .dot::after{ content:""; position:absolute; inset:-7px; border:1px solid color-mix(in oklch, var(--accent) 42%, transparent); border-radius:inherit; animation:eolosPulse 2.6s ease-out infinite; }
+@keyframes eolosPulse{ 0%{ transform:scale(.7); opacity:.65; } 70%,100%{ transform:scale(1.9); opacity:0; } }
 .chrome .wm .sub { color: var(--ink-mute); }
 .chrome nav { display: flex; gap: 28px; }
 .chrome .right { display: flex; gap: 22px; justify-content: flex-end; align-items: center; }
@@ -1198,7 +1200,12 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
 (function(){
   const root  = document.documentElement;
   const body  = document.body;
-  const STATE = { lang: "gr" };
+  const LANG_KEY = "eolos-lang";
+  function storedLang(){
+    try { return localStorage.getItem(LANG_KEY) === "en" ? "en" : "gr"; }
+    catch(e){ return "gr"; }
+  }
+  const STATE = { lang: storedLang() };
 
   /* ── i18n ─────────────────────────────────────────────── */
   // capture EN originals on first run
@@ -1228,6 +1235,7 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
   function setLang(lang){
     if (STATE.lang === lang) return;
     STATE.lang = lang;
+    try { localStorage.setItem(LANG_KEY, lang); } catch(e){}
     apply();
   }
 
