@@ -460,9 +460,7 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
 }
 .review-grid{
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  grid-auto-rows: clamp(126px, 12vw, 190px);
-  grid-auto-flow: dense;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1px;
   background: var(--rule);
   border-top: 1px solid var(--rule);
@@ -470,17 +468,12 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
 }
 .review-card{
   position: relative;
-  grid-column: span 2;
-  grid-row: span 2;
-  min-height: 100%;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   background: var(--bg-2);
   cursor: zoom-in;
   isolation: isolate;
 }
-.review-card[data-shape="wide"]{ grid-column: span 4; grid-row: span 2; }
-.review-card[data-shape="tall"]{ grid-column: span 2; grid-row: span 3; }
-.review-card[data-shape="feature"]{ grid-column: span 3; grid-row: span 3; }
 .review-card img{
   width: 100%;
   height: 100%;
@@ -581,22 +574,12 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
 @media (max-width: 900px){
   .review-gallery .gallery-intro{ margin: 0 var(--pad-x) 34px; }
   .review-grid{
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-auto-rows: clamp(112px, 18vw, 176px);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .review-card[data-shape="wide"]{ grid-column: span 4; }
-  .review-card[data-shape="feature"]{ grid-column: span 2; }
 }
 @media (max-width: 560px){
   .review-grid{
     grid-template-columns: 1fr;
-    grid-auto-rows: auto;
-  }
-  .review-card,
-  .review-card[data-shape]{
-    grid-column: auto;
-    grid-row: auto;
-    aspect-ratio: 1 / .82;
   }
   .review-lightbox .prev,
   .review-lightbox .next{ top: auto; bottom: 18px; transform: none; }
@@ -853,9 +836,9 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   <div class="right">
     <a href="tel:+302103009919" class="tel">+30 210 300 99 19</a>
     <span class="lang" role="group" aria-label="Language">
-      <button type="button" data-lang="en" aria-pressed="false">EN</button>
-      <span class="sep">/</span>
       <button type="button" data-lang="gr" aria-pressed="true">GR</button>
+      <span class="sep">/</span>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
     </span>
     <a href="#contact" class="cta">
       <span data-i18n="cta_label" data-gr="Ξεκινήστε ένα project" data-en="Start a project">Ξεκινήστε ένα project</span>
@@ -1383,7 +1366,6 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     return mixed;
   }
   const REVIEW_ORDER = distributeReviewProjects(REVIEW_PROJECTS);
-  const REVIEW_SHAPES = ["wide", "tall", "feature", "square", "wide", "square", "tall", "feature", "square"];
   const reviewState = { filter: "all", shown: 9, list: REVIEW_ORDER };
   const reviewFilters = document.getElementById("review-filters");
   const reviewGrid = document.getElementById("review-grid");
@@ -1403,11 +1385,6 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   function getReviewList(){
     if (reviewState.filter === "all") return REVIEW_ORDER;
     return REVIEW_ORDER.filter(item => item.cats.includes(reviewState.filter));
-  }
-  function reviewCardShape(item, idx){
-    if (item.img.includes("-mobile")) return "tall";
-    if (item.cats.includes("greek-web")) return idx % 3 === 0 ? "wide" : "feature";
-    return REVIEW_SHAPES[idx % REVIEW_SHAPES.length];
   }
   function renderReviewFilters(){
     if (!reviewFilters) return;
@@ -1435,7 +1412,6 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     visible.forEach((item, idx) => {
       const card = document.createElement("article");
       card.className = "review-card";
-      card.dataset.shape = reviewCardShape(item, idx);
       const title = reviewText(item, "title");
       const tag = reviewText(item, "tag");
       card.innerHTML = `<img src="${item.img}" alt="${title}" loading="lazy" decoding="async"><div class="review-meta"><span>${tag}</span><h3>${title}</h3></div>`;
