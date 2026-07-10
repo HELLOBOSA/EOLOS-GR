@@ -1173,7 +1173,7 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
     <input type="hidden" name="services" id="selected-services" value="">
     <div class="field">
       <label><span data-i18n="f_name" data-gr="Όνομα" data-en="Your name">Όνομα</span><span class="ix">01</span></label>
-      <input type="text" name="name" placeholder="Μαρία Παπαδοπούλου" required>
+      <input type="text" name="name" placeholder="Μαρία Παπαδοπούλου" data-gr-placeholder="Μαρία Παπαδοπούλου" data-en-placeholder="Maria Papadopoulou" required>
     </div>
     <div class="field">
       <label><span>Email</span><span class="ix">02</span></label>
@@ -1185,7 +1185,7 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
     </div>
     <div class="field">
       <label><span data-i18n="f_city" data-gr="Πόλη" data-en="City">Πόλη</span><span class="ix">04</span></label>
-      <input type="text" name="city" placeholder="Αθήνα" required>
+      <input type="text" name="city" placeholder="Αθήνα" data-gr-placeholder="Αθήνα" data-en-placeholder="Athens" required>
     </div>
     <div class="field full">
       <label><span data-i18n="f_services" data-gr="Τι χρειάζεστε" data-en="What we'd help with">Τι χρειάζεστε</span><span class="ix">05</span></label>
@@ -1543,8 +1543,14 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
   // Submit
   submitBtn.addEventListener('click', async () => {
     if(!form.checkValidity()){ form.reportValidity(); return; }
+    const label = submitBtn.querySelector('span');
+    const isEn = document.documentElement.lang === 'en';
+    const restore = () => { label.textContent = isEn ? label.getAttribute('data-en') : label.getAttribute('data-gr'); };
+    const failMsg = isEn
+      ? 'Something went wrong. Please email info@eoloslab.com directly.'
+      : 'Κάτι πήγε στραβά. Γράψτε μας απευθείας στο info@eoloslab.com.';
     submitBtn.disabled = true;
-    submitBtn.querySelector('span').textContent = '...';
+    label.textContent = '...';
     try {
       const res = await fetch('https://formspree.io/f/xeedreeq', {
         method: 'POST', body: new FormData(form), headers: {'Accept':'application/json'}
@@ -1553,14 +1559,14 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
         form.style.display = 'none';
         confirmed.style.display = 'block';
       } else {
-        alert('Something went wrong. Please email info@eoloslab.com directly.');
+        alert(failMsg);
         submitBtn.disabled = false;
-        submitBtn.querySelector('span').textContent = 'Submit brief';
+        restore();
       }
     } catch(e){
-      alert('Network error. Please email info@eoloslab.com directly.');
+      alert(failMsg);
       submitBtn.disabled = false;
-      submitBtn.querySelector('span').textContent = 'Submit brief';
+      restore();
     }
   });
 })();
