@@ -62,6 +62,16 @@ a.cta:hover .arrow{transform:translateX(4px);}
 body > main:first-of-type{padding-top:clamp(104px,11vw,140px);}
   
 
+main{max-width:1180px;margin-left:auto;margin-right:auto}
+.hero,.svc-grid{max-width:1180px;margin-left:auto;margin-right:auto}
+.body,.feature,.pull,.related-svc,.sectors{margin-left:auto;margin-right:auto}
+.svc-hero-img{max-width:1180px;margin:0 auto 60px;display:grid;grid-template-columns:1.2fr .8fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.svc-hero-img .img{position:relative;min-height:360px;overflow:hidden;background:var(--bg2)}
+.svc-hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.svc-hero-note{background:var(--bg2);padding:clamp(28px,4vw,46px);display:flex;flex-direction:column;justify-content:space-between}
+.svc-hero-note strong{font-family:var(--display);font-weight:400;font-size:clamp(26px,3vw,42px);line-height:1.04;color:var(--ink)}
+.svc-hero-note p{color:var(--muted);margin:20px 0 0;font-size:16px;line-height:1.55}
+@media(max-width:820px){.svc-hero-img{grid-template-columns:1fr}.svc-hero-img .img{min-height:260px}}
 .body{max-width:820px;color:var(--muted);font-size:18px;line-height:1.62}
 .body p{margin:0 0 22px}.body p.first{color:var(--ink);font-size:21px}
 .body h2{font-family:var(--display);font-weight:400;color:var(--ink);font-size:clamp(30px,4vw,52px);line-height:1.02;margin:56px 0 18px}
@@ -136,12 +146,15 @@ body > main:first-of-type{padding-top:clamp(104px,11vw,140px);}
       <div><div class="meta" data-gr="Υπηρεσία · Αθήνα & Ελλάδα" data-en="Service · Athens & Greece">Υπηρεσία · Αθήνα & Ελλάδα</div><h1 data-gr="Web design & SEO" data-en="Web design & SEO">Web design & SEO</h1></div>
       <p class="lead" data-gr="Websites που οδηγούν σε κράτηση, κλήση ή αίτημα, με ελληνικό SEO από την πρώτη μέρα." data-en="Websites that lead to a booking, a call or an enquiry, with Greek SEO from day one.">Websites που οδηγούν σε κράτηση, κλήση ή αίτημα, με ελληνικό SEO από την πρώτη μέρα.</p>
     </section>
+    <section class="svc-hero-img">
+      <div class="img"><img src="../../assets/work/eoloslab-gr.webp" alt="Web design & SEO στην Αθήνα" loading="eager"></div>
+      <div class="svc-hero-note"><strong data-gr="Ένα website χωρίς σαφή διαδρομή προς την κράτηση είναι έξοδο, όχι εργαλείο." data-en="A website with no clear path to booking is a cost, not a tool.">Ένα website χωρίς σαφή διαδρομή προς την κράτηση είναι έξοδο, όχι εργαλείο.</strong><p data-gr="Ταχύτητα, καθαρή διαδρομή και ελληνικό SEO από την αρχή." data-en="Speed, a clear path and Greek SEO from the start.">Ταχύτητα, καθαρή διαδρομή και ελληνικό SEO από την αρχή.</p></div>
+    </section>
     <section class="body">
       <p class="first" data-gr="Ένα website δεν είναι brochure. Είναι το σημείο όπου ο πελάτης επιβεβαιώνει ότι αυτό που είδε στις πλατφόρμες είναι πραγματικό και αποφασίζει να έρθει. Χρειάζεται γρήγορη φόρτωση, καθαρές εικόνες, ξεκάθαρη διαδρομή προς την ενέργεια και δομή που καταλαβαίνει η Google." data-en="A website is not a brochure. It is where the customer confirms that what they saw on the platforms is real and decides to come. It needs fast loading, clean images, a clear path to action and a structure Google understands.">Ένα website δεν είναι brochure. Είναι το σημείο όπου ο πελάτης επιβεβαιώνει ότι αυτό που είδε στις πλατφόρμες είναι πραγματικό και αποφασίζει να έρθει. Χρειάζεται γρήγορη φόρτωση, καθαρές εικόνες, ξεκάθαρη διαδρομή προς την ενέργεια και δομή που καταλαβαίνει η Google.</p>
       <div class="feature"><div><strong data-gr="01 / Δομή" data-en="01 / Structure">01 / Δομή</strong><span data-gr="Αρχιτεκτονική περιεχομένου με καθαρή είσοδο και ξεκάθαρες επιλογές." data-en="Content architecture with a clear entry and clear choices.">Αρχιτεκτονική περιεχομένου με καθαρή είσοδο και ξεκάθαρες επιλογές.</span></div><div><strong data-gr="02 / Design" data-en="02 / Design">02 / Design</strong><span data-gr="Mobile-first σχεδιασμός συνδεδεμένος με το brand και τη φωτογραφία." data-en="Mobile-first design connected to the brand and the photography.">Mobile-first σχεδιασμός συνδεδεμένος με το brand και τη φωτογραφία.</span></div><div><strong data-gr="03 / SEO" data-en="03 / SEO">03 / SEO</strong><span data-gr="Τοπικό SEO, schema, ταχύτητα και σωστά metadata." data-en="Local SEO, schema, speed and correct metadata.">Τοπικό SEO, schema, ταχύτητα και σωστά metadata.</span></div><div><strong data-gr="04 / Conversion" data-en="04 / Conversion">04 / Conversion</strong><span data-gr="Κράτηση, φόρμα, κλήση και μέτρηση αποτελεσμάτων." data-en="Booking, form, call and result tracking.">Κράτηση, φόρμα, κλήση και μέτρηση αποτελεσμάτων.</span></div></div>
       <h2 data-gr="Φτιαγμένο για κινητό και για κράτηση" data-en="Built for mobile and for booking">Φτιαγμένο για κινητό και για κράτηση</h2>
       <p data-gr="Ο πελάτης συγκρίνει γρήγορα, συχνά από κινητό, και αποφασίζει από λίγες εικόνες και καθαρή πληροφορία. Το site πρέπει να απαντά πριν ρωτήσει και να οδηγεί σε ένα ξεκάθαρο επόμενο βήμα." data-en="The customer compares fast, often on a phone, and decides from a few images and clear information. The site must answer before they ask and lead to one clear next step.">Ο πελάτης συγκρίνει γρήγορα, συχνά από κινητό, και αποφασίζει από λίγες εικόνες και καθαρή πληροφορία. Το site πρέπει να απαντά πριν ρωτήσει και να οδηγεί σε ένα ξεκάθαρο επόμενο βήμα.</p>
-      <blockquote class="pull" data-gr="Ένα website χωρίς σαφή διαδρομή προς την κράτηση είναι έξοδο, όχι εργαλείο." data-en="A website with no clear path to booking is a cost, not a tool.">Ένα website χωρίς σαφή διαδρομή προς την κράτηση είναι έξοδο, όχι εργαλείο.</blockquote>
       <h2 data-gr="Για ποιους" data-en="Who it is for">Για ποιους</h2>
       <div class="sectors"><span data-gr="Εστιατόρια" data-en="Restaurants">Εστιατόρια</span><span data-gr="Καφέ & bar" data-en="Cafes & bars">Καφέ & bar</span><span data-gr="Ξενοδοχεία" data-en="Hotels">Ξενοδοχεία</span><span data-gr="Wellness & spa" data-en="Wellness & spa">Wellness & spa</span><span data-gr="Retail" data-en="Retail">Retail</span><span data-gr="Γραφεία" data-en="Offices">Γραφεία</span><span data-gr="Ακίνητα & επένδυση" data-en="Real estate & investment">Ακίνητα & επένδυση</span></div>
       <div class="related-svc">

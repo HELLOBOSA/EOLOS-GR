@@ -62,6 +62,16 @@ a.cta:hover .arrow{transform:translateX(4px);}
 body > main:first-of-type{padding-top:clamp(104px,11vw,140px);}
   
 
+main{max-width:1180px;margin-left:auto;margin-right:auto}
+.hero,.svc-grid{max-width:1180px;margin-left:auto;margin-right:auto}
+.body,.feature,.pull,.related-svc,.sectors{margin-left:auto;margin-right:auto}
+.svc-hero-img{max-width:1180px;margin:0 auto 60px;display:grid;grid-template-columns:1.2fr .8fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.svc-hero-img .img{position:relative;min-height:360px;overflow:hidden;background:var(--bg2)}
+.svc-hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.svc-hero-note{background:var(--bg2);padding:clamp(28px,4vw,46px);display:flex;flex-direction:column;justify-content:space-between}
+.svc-hero-note strong{font-family:var(--display);font-weight:400;font-size:clamp(26px,3vw,42px);line-height:1.04;color:var(--ink)}
+.svc-hero-note p{color:var(--muted);margin:20px 0 0;font-size:16px;line-height:1.55}
+@media(max-width:820px){.svc-hero-img{grid-template-columns:1fr}.svc-hero-img .img{min-height:260px}}
 .body{max-width:820px;color:var(--muted);font-size:18px;line-height:1.62}
 .body p{margin:0 0 22px}.body p.first{color:var(--ink);font-size:21px}
 .body h2{font-family:var(--display);font-weight:400;color:var(--ink);font-size:clamp(30px,4vw,52px);line-height:1.02;margin:56px 0 18px}
@@ -136,12 +146,15 @@ body > main:first-of-type{padding-top:clamp(104px,11vw,140px);}
       <div><div class="meta" data-gr="Υπηρεσία · Αθήνα & Ελλάδα" data-en="Service · Athens & Greece">Υπηρεσία · Αθήνα & Ελλάδα</div><h1 data-gr="Ολοκληρωμένη εμπειρία: χώρος, brand, web" data-en="Integrated experience: space, brand, web">Ολοκληρωμένη εμπειρία: χώρος, brand, web</h1></div>
       <p class="lead" data-gr="Χώρος, brand και web σχεδιασμένα μαζί, από μία ομάδα, με ένα brief και μία γραμμή απόφασης." data-en="Space, brand and web designed together, by one team, with one brief and one line of decision.">Χώρος, brand και web σχεδιασμένα μαζί, από μία ομάδα, με ένα brief και μία γραμμή απόφασης.</p>
     </section>
+    <section class="svc-hero-img">
+      <div class="img"><img src="../../assets/work/eoloslab-gr.webp" alt="Ολοκληρωμένη εμπειρία: χώρος, brand, web στην Αθήνα" loading="eager"></div>
+      <div class="svc-hero-note"><strong data-gr="Η αξία δεν βρίσκεται στα κομμάτια. Βρίσκεται στη σύνδεσή τους." data-en="The value is not in the pieces. It is in how they connect.">Η αξία δεν βρίσκεται στα κομμάτια. Βρίσκεται στη σύνδεσή τους.</strong><p data-gr="Χώρος, brand και web με ένα brief και μία ομάδα." data-en="Space, brand and web with one brief and one team.">Χώρος, brand και web με ένα brief και μία ομάδα.</p></div>
+    </section>
     <section class="body">
       <p class="first" data-gr="Η επιχείρηση δεν ζει μόνο στον χώρο. Ζει στην πρώτη εικόνα του site, στο booking path, στο social preview και στη μνήμη του πελάτη. Όταν αυτά σχεδιάζονται χωριστά, η εμπιστοσύνη πέφτει πριν ξεκινήσει η εμπειρία. Όταν σχεδιάζονται μαζί, όλα λένε την ίδια ιστορία." data-en="A business does not live only in the space. It lives in the first image of the site, the booking path, the social preview and the memory of the customer. When these are designed separately, trust drops before the experience starts. When they are designed together, everything tells the same story.">Η επιχείρηση δεν ζει μόνο στον χώρο. Ζει στην πρώτη εικόνα του site, στο booking path, στο social preview και στη μνήμη του πελάτη. Όταν αυτά σχεδιάζονται χωριστά, η εμπιστοσύνη πέφτει πριν ξεκινήσει η εμπειρία. Όταν σχεδιάζονται μαζί, όλα λένε την ίδια ιστορία.</p>
       <div class="feature"><div><strong data-gr="01 / Χώρος" data-en="01 / Space">01 / Χώρος</strong><span data-gr="Ο φυσικός χώρος δίνει την απόδειξη της υπόσχεσης." data-en="The physical space gives proof of the promise.">Ο φυσικός χώρος δίνει την απόδειξη της υπόσχεσης.</span></div><div><strong data-gr="02 / Brand" data-en="02 / Brand">02 / Brand</strong><span data-gr="Η ταυτότητα δίνει μνήμη και αναγνώριση." data-en="The identity gives memory and recognition.">Η ταυτότητα δίνει μνήμη και αναγνώριση.</span></div><div><strong data-gr="03 / Web" data-en="03 / Web">03 / Web</strong><span data-gr="Το website μειώνει την τριβή προς την ενέργεια." data-en="The website reduces friction toward action.">Το website μειώνει την τριβή προς την ενέργεια.</span></div><div><strong data-gr="04 / Μία ομάδα" data-en="04 / One team">04 / Μία ομάδα</strong><span data-gr="Ένα brief, λιγότερα κενά, ταχύτερη υλοποίηση." data-en="One brief, fewer gaps, faster delivery.">Ένα brief, λιγότερα κενά, ταχύτερη υλοποίηση.</span></div></div>
       <h2 data-gr="Γιατί το σύνολο αξίζει πιο πολύ" data-en="Why the whole is worth more">Γιατί το σύνολο αξίζει πιο πολύ</h2>
       <p data-gr="Μία ομάδα που σχεδιάζει τον χώρο, τη μάρκα και το web ταυτόχρονα μειώνει τα κενά ανάμεσα σε designer, συνεργείο, brand designer, φωτογράφο και developer. Το αποτέλεσμα φαίνεται στον χώρο, στο site και στα έσοδα." data-en="One team designing the space, the brand and the web at the same time reduces the gaps between designer, contractor, brand designer, photographer and developer. The result shows in the space, the site and the revenue.">Μία ομάδα που σχεδιάζει τον χώρο, τη μάρκα και το web ταυτόχρονα μειώνει τα κενά ανάμεσα σε designer, συνεργείο, brand designer, φωτογράφο και developer. Το αποτέλεσμα φαίνεται στον χώρο, στο site και στα έσοδα.</p>
-      <blockquote class="pull" data-gr="Η αξία δεν βρίσκεται στα κομμάτια. Βρίσκεται στη σύνδεσή τους." data-en="The value is not in the pieces. It is in how they connect.">Η αξία δεν βρίσκεται στα κομμάτια. Βρίσκεται στη σύνδεσή τους.</blockquote>
       <h2 data-gr="Για ποιους" data-en="Who it is for">Για ποιους</h2>
       <div class="sectors"><span data-gr="Εστιατόρια" data-en="Restaurants">Εστιατόρια</span><span data-gr="Καφέ & bar" data-en="Cafes & bars">Καφέ & bar</span><span data-gr="Ξενοδοχεία" data-en="Hotels">Ξενοδοχεία</span><span data-gr="Wellness & spa" data-en="Wellness & spa">Wellness & spa</span><span data-gr="Retail" data-en="Retail">Retail</span><span data-gr="Γραφεία" data-en="Offices">Γραφεία</span><span data-gr="Ακίνητα & επένδυση" data-en="Real estate & investment">Ακίνητα & επένδυση</span></div>
       <div class="related-svc">

@@ -62,6 +62,16 @@ a.cta:hover .arrow{transform:translateX(4px);}
 body > main:first-of-type{padding-top:clamp(104px,11vw,140px);}
   
 
+main{max-width:1180px;margin-left:auto;margin-right:auto}
+.hero,.svc-grid{max-width:1180px;margin-left:auto;margin-right:auto}
+.body,.feature,.pull,.related-svc,.sectors{margin-left:auto;margin-right:auto}
+.svc-hero-img{max-width:1180px;margin:0 auto 60px;display:grid;grid-template-columns:1.2fr .8fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.svc-hero-img .img{position:relative;min-height:360px;overflow:hidden;background:var(--bg2)}
+.svc-hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.svc-hero-note{background:var(--bg2);padding:clamp(28px,4vw,46px);display:flex;flex-direction:column;justify-content:space-between}
+.svc-hero-note strong{font-family:var(--display);font-weight:400;font-size:clamp(26px,3vw,42px);line-height:1.04;color:var(--ink)}
+.svc-hero-note p{color:var(--muted);margin:20px 0 0;font-size:16px;line-height:1.55}
+@media(max-width:820px){.svc-hero-img{grid-template-columns:1fr}.svc-hero-img .img{min-height:260px}}
 .body{max-width:820px;color:var(--muted);font-size:18px;line-height:1.62}
 .body p{margin:0 0 22px}.body p.first{color:var(--ink);font-size:21px}
 .body h2{font-family:var(--display);font-weight:400;color:var(--ink);font-size:clamp(30px,4vw,52px);line-height:1.02;margin:56px 0 18px}
@@ -136,12 +146,15 @@ body > main:first-of-type{padding-top:clamp(104px,11vw,140px);}
       <div><div class="meta" data-gr="Υπηρεσία · Αθήνα & Ελλάδα" data-en="Service · Athens & Greece">Υπηρεσία · Αθήνα & Ελλάδα</div><h1 data-gr="Αρχιτεκτονική οπτικοποίηση" data-en="Architectural visualization">Αρχιτεκτονική οπτικοποίηση</h1></div>
       <p class="lead" data-gr="Εικόνες που δείχνουν τον χώρο στην πιο δυνατή εκδοχή του, πριν μπει το πρώτο υλικό." data-en="Images that show the space at its strongest, before the first material goes in.">Εικόνες που δείχνουν τον χώρο στην πιο δυνατή εκδοχή του, πριν μπει το πρώτο υλικό.</p>
     </section>
+    <section class="svc-hero-img">
+      <div class="img"><img src="../../assets/work/norrsken-15.webp" alt="Αρχιτεκτονική οπτικοποίηση στην Αθήνα" loading="eager"></div>
+      <div class="svc-hero-note"><strong data-gr="Αν ο σχεδιασμός δεν σκέφτεται την εικόνα της κράτησης, αφήνει χρήματα στο τραπέζι." data-en="If the design does not think about the booking image, it leaves money on the table.">Αν ο σχεδιασμός δεν σκέφτεται την εικόνα της κράτησης, αφήνει χρήματα στο τραπέζι.</strong><p data-gr="Δυνατές εικόνες για πώληση, μίσθωση και έγκριση." data-en="Strong images for sale, lease and approval.">Δυνατές εικόνες για πώληση, μίσθωση και έγκριση.</p></div>
+    </section>
     <section class="body">
       <p class="first" data-gr="Μια σωστή οπτικοποίηση δεν είναι διακόσμηση της παρουσίασης. Είναι εργαλείο απόφασης και πώλησης: βοηθά τον ιδιοκτήτη να εγκρίνει, τον επενδυτή να καταλάβει και τον πελάτη να κρατήσει ή να αγοράσει πριν ολοκληρωθεί ο χώρος." data-en="Good visualization is not presentation decoration. It is a decision and sales tool: it helps the owner approve, the investor understand and the customer book or buy before the space is finished.">Μια σωστή οπτικοποίηση δεν είναι διακόσμηση της παρουσίασης. Είναι εργαλείο απόφασης και πώλησης: βοηθά τον ιδιοκτήτη να εγκρίνει, τον επενδυτή να καταλάβει και τον πελάτη να κρατήσει ή να αγοράσει πριν ολοκληρωθεί ο χώρος.</p>
       <div class="feature"><div><strong data-gr="01 / 3D" data-en="01 / 3D">01 / 3D</strong><span data-gr="Ρεαλιστικές εικόνες χώρου με σωστό φως και υλικά." data-en="Realistic space images with correct light and materials.">Ρεαλιστικές εικόνες χώρου με σωστό φως και υλικά.</span></div><div><strong data-gr="02 / Staging" data-en="02 / Staging">02 / Staging</strong><span data-gr="Ψηφιακό staging για ακίνητα προς πώληση ή μίσθωση." data-en="Digital staging for assets for sale or lease.">Ψηφιακό staging για ακίνητα προς πώληση ή μίσθωση.</span></div><div><strong data-gr="03 / Επιλογές" data-en="03 / Options">03 / Επιλογές</strong><span data-gr="Παραλλαγές υλικών και διάταξης για γρήγορη απόφαση." data-en="Material and layout variants for fast decisions.">Παραλλαγές υλικών και διάταξης για γρήγορη απόφαση.</span></div><div><strong data-gr="04 / Χρήση" data-en="04 / Use">04 / Χρήση</strong><span data-gr="Εικόνες για site, κρατήσεις, επενδυτές και άδειες." data-en="Images for the site, bookings, investors and permits.">Εικόνες για site, κρατήσεις, επενδυτές και άδειες.</span></div></div>
       <h2 data-gr="Για πώληση, μίσθωση και επένδυση" data-en="For sale, lease and investment">Για πώληση, μίσθωση και επένδυση</h2>
       <p data-gr="Η πρώτη εικόνα στην οθόνη στηρίζει την κράτηση και την τιμή. Για promoters, ιδιοκτήτες και ξενοδοχεία, μια δυνατή εικόνα πριν την επίσκεψη είναι συχνά η διαφορά ανάμεσα σε ένα αίτημα και μια χαμένη ευκαιρία." data-en="The first image on the screen supports the booking and the price. For promoters, owners and hotels, a strong image before the visit is often the difference between an enquiry and a missed opportunity.">Η πρώτη εικόνα στην οθόνη στηρίζει την κράτηση και την τιμή. Για promoters, ιδιοκτήτες και ξενοδοχεία, μια δυνατή εικόνα πριν την επίσκεψη είναι συχνά η διαφορά ανάμεσα σε ένα αίτημα και μια χαμένη ευκαιρία.</p>
-      <blockquote class="pull" data-gr="Αν ο σχεδιασμός δεν σκέφτεται την εικόνα της κράτησης, αφήνει χρήματα στο τραπέζι." data-en="If the design does not think about the booking image, it leaves money on the table.">Αν ο σχεδιασμός δεν σκέφτεται την εικόνα της κράτησης, αφήνει χρήματα στο τραπέζι.</blockquote>
       <h2 data-gr="Για ποιους" data-en="Who it is for">Για ποιους</h2>
       <div class="sectors"><span data-gr="Εστιατόρια" data-en="Restaurants">Εστιατόρια</span><span data-gr="Καφέ & bar" data-en="Cafes & bars">Καφέ & bar</span><span data-gr="Ξενοδοχεία" data-en="Hotels">Ξενοδοχεία</span><span data-gr="Wellness & spa" data-en="Wellness & spa">Wellness & spa</span><span data-gr="Retail" data-en="Retail">Retail</span><span data-gr="Γραφεία" data-en="Offices">Γραφεία</span><span data-gr="Ακίνητα & επένδυση" data-en="Real estate & investment">Ακίνητα & επένδυση</span></div>
       <div class="related-svc">
