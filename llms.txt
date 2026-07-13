@@ -33,9 +33,21 @@ Athina, Attiki, Ellada, Mykonos, Santorini, Kriti, Paros, Chalkidiki kai diethne
 ## Kyries selides
 
 - https://eoloslab.gr/
+- https://eoloslab.gr/emporikos-sxediasmos-athina/
+- https://eoloslab.gr/ypiresies/
 - https://eoloslab.gr/journal/
 - https://eoloslab.gr/sixnes-erotiseis/
 - https://eoloslab.gr/legal/
+
+## Selides ypiresion
+
+- https://eoloslab.gr/ypiresies/emporikos-sxediasmos-esoterikon-choron/
+- https://eoloslab.gr/ypiresies/anakainisi-diaxeirisi-ergou/
+- https://eoloslab.gr/ypiresies/emporiko-branding/
+- https://eoloslab.gr/ypiresies/web-design-seo/
+- https://eoloslab.gr/ypiresies/dimiourgiki-dieythynsi/
+- https://eoloslab.gr/ypiresies/optikopoiisi-choron/
+- https://eoloslab.gr/ypiresies/oloklirwmeni-empeiria/
 
 ## Journal
 
@@ -43,6 +55,11 @@ Athina, Attiki, Ellada, Mykonos, Santorini, Kriti, Paros, Chalkidiki kai diethne
 - https://eoloslab.gr/journal/hotel-design-athens-2026/
 - https://eoloslab.gr/journal/choose-design-firm-athens/
 - https://eoloslab.gr/journal/xoros-brand-web-epixeirisi/
+- https://eoloslab.gr/journal/adeies-anakainisis-epaggelmatikou-chorou-athina/
+- https://eoloslab.gr/journal/kostos-anakainisis-epaggelmatikou-chorou/
+- https://eoloslab.gr/journal/branding-kafe-estiatorio/
+- https://eoloslab.gr/journal/web-design-seo-estiatorio/
+- https://eoloslab.gr/journal/anakainisi-kafeterias-athina/
 
 ---
 
@@ -77,3 +94,34 @@ Athina, Attiki, Ellada, Mykonos, Santorini, Kriti, Paros, Chalkidiki kai diethne
 ## Coverage
 
 Athens, Attica, Greece, Mykonos, Santorini, Crete, Paros, Chalkidiki and international clients developing a business or brand in Greece.
+
+## Key pages
+
+- https://eoloslab.gr/
+- https://eoloslab.gr/emporikos-sxediasmos-athina/
+- https://eoloslab.gr/ypiresies/
+- https://eoloslab.gr/journal/
+- https://eoloslab.gr/sixnes-erotiseis/
+- https://eoloslab.gr/legal/
+
+## Service pages
+
+- https://eoloslab.gr/ypiresies/emporikos-sxediasmos-esoterikon-choron/
+- https://eoloslab.gr/ypiresies/anakainisi-diaxeirisi-ergou/
+- https://eoloslab.gr/ypiresies/emporiko-branding/
+- https://eoloslab.gr/ypiresies/web-design-seo/
+- https://eoloslab.gr/ypiresies/dimiourgiki-dieythynsi/
+- https://eoloslab.gr/ypiresies/optikopoiisi-choron/
+- https://eoloslab.gr/ypiresies/oloklirwmeni-empeiria/
+
+## Journal
+
+- https://eoloslab.gr/journal/anakainisi-estiatoriou-athina/
+- https://eoloslab.gr/journal/hotel-design-athens-2026/
+- https://eoloslab.gr/journal/choose-design-firm-athens/
+- https://eoloslab.gr/journal/xoros-brand-web-epixeirisi/
+- https://eoloslab.gr/journal/adeies-anakainisis-epaggelmatikou-chorou-athina/
+- https://eoloslab.gr/journal/kostos-anakainisis-epaggelmatikou-chorou/
+- https://eoloslab.gr/journal/branding-kafe-estiatorio/
+- https://eoloslab.gr/journal/web-design-seo-estiatorio/
+- https://eoloslab.gr/journal/anakainisi-kafeterias-athina/
