@@ -60,7 +60,12 @@ a.cta:hover .arrow{transform:translateX(4px);}
 .foot a:hover{color:var(--accent);}
 @media(max-width:700px){.foot{grid-template-columns:1fr;}.foot .right,.foot .center{text-align:left;}.foot .right{justify-content:flex-start!important;}}
 
-body > main:first-of-type{padding-top:clamp(104px,11vw,140px);}
+body > main:first-of-type{padding-top:clamp(40px,6vw,72px);}
+.journal-hero{position:relative;min-height:58vh;display:flex;align-items:end;border-bottom:1px solid var(--line);overflow:hidden}
+.journal-hero-inner{position:relative;width:min(1180px,100%);margin:0 auto;padding:clamp(100px,13vw,150px) clamp(20px,4vw,56px) clamp(48px,6vw,76px)}
+.journal-hero .eyebrow{display:block;margin-bottom:22px;color:var(--muted)}
+.journal-hero h1{max-width:16ch}
+.journal-hero .lead{max-width:54ch;margin:28px 0 0;font-size:clamp(18px,1.8vw,25px);line-height:1.65}
   
 
 .svc-page{max-width:1280px;margin-left:auto;margin-right:auto}
@@ -156,11 +161,14 @@ body > main:first-of-type{padding-top:clamp(104px,11vw,140px);}
     <a href="../#contact" data-i18n="mob_nav_contact" data-gr="Επικοινωνία" data-en="Contact">Επικοινωνία</a>
   </div>
 </header>
-  <main>
-    <section class="hero">
-      <div><div class="meta" data-gr="Το στούντιο · Αθήνα" data-en="The studio · Athens">Το στούντιο · Αθήνα</div><h1 data-gr="Ένα στούντιο. Χώρος, brand και web." data-en="One studio. Space, brand and web.">Ένα στούντιο. Χώρος, brand και web.</h1></div>
+  <section class="journal-hero">
+    <div class="journal-hero-inner">
+      <span class="eyebrow meta" data-gr="Το στούντιο · Αθήνα" data-en="The studio · Athens">Το στούντιο · Αθήνα</span>
+      <h1 data-gr="Ένα στούντιο. Χώρος, brand και web." data-en="One studio. Space, brand and web.">Ένα στούντιο. Χώρος, brand και web.</h1>
       <p class="lead" data-gr="Ιδρυθήκαμε από αρχιτέκτονες με πάνω από 20 χρόνια διεθνούς εμπειρίας. Σχεδιάζουμε τον χώρο, τη μάρκα και το website μιας επιχείρησης σαν ένα πράγμα." data-en="Founded by architects with over 20 years of international experience. We design a business as one thing: its space, its brand and its website.">Ιδρυθήκαμε από αρχιτέκτονες με πάνω από 20 χρόνια διεθνούς εμπειρίας. Σχεδιάζουμε τον χώρο, τη μάρκα και το website μιας επιχείρησης σαν ένα πράγμα.</p>
-    </section>
+    </div>
+  </section>
+  <main>
     <section class="svc-hero-img">
       <img src="../assets/work/norrsken-04.webp" alt="EOLOS DESIGN LAB, εμπορικός σχεδιασμός στην Αθήνα" loading="eager" decoding="async">
       <div class="svc-hero-note">
