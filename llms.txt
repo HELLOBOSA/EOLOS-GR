@@ -33,6 +33,7 @@ Athina, Attiki, Ellada, Mykonos, Santorini, Kriti, Paros, Chalkidiki kai diethne
 ## Kyries selides
 
 - https://eoloslab.gr/
+- https://eoloslab.gr/studio/
 - https://eoloslab.gr/emporikos-sxediasmos-athina/
 - https://eoloslab.gr/ypiresies/
 - https://eoloslab.gr/journal/
