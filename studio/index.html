@@ -65,6 +65,11 @@ body > main:first-of-type{padding-top:clamp(104px,11vw,140px);}
 .article-head .lead{margin-top:22px;max-width:52ch}
 .svc-section{max-width:1280px;margin:0 auto}
 .svc-title{font-family:var(--display);font-weight:400;color:var(--ink);font-size:clamp(30px,4vw,52px);line-height:1.02;margin:0 0 28px}
+.related{max-width:980px;margin:78px auto 0;border-top:1px solid var(--line);padding-top:34px;display:flex;justify-content:space-between;gap:20px;align-items:center}
+.related h2{font-family:var(--display);font-weight:400;color:var(--ink);font-size:clamp(34px,5vw,64px);line-height:1;max-width:18ch}
+.related a{border:1px solid var(--ink);border-radius:999px;padding:13px 18px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.related a:hover{background:var(--ink);color:var(--bg)}
+@media(max-width:900px){.related{flex-direction:column;align-items:flex-start}}
   
 
 .svc-page{max-width:1280px;margin-left:auto;margin-right:auto}
@@ -98,14 +103,15 @@ body > main:first-of-type{padding-top:clamp(104px,11vw,140px);}
 .feature strong{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
 .feature span{color:var(--ink);font-size:16px;line-height:1.5}
 .pull{border-left:2px solid var(--accent);padding-left:22px;margin:44px 0;max-width:760px;color:var(--ink);font-family:var(--display);font-size:clamp(26px,3.5vw,40px);line-height:1.1}
-.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line);margin-top:8px}
-.svc-grid a{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(26px,3vw,40px);display:flex;flex-direction:column;background:var(--bg);transition:background 200ms}
+.svc-grid{border-top:1px solid var(--line);margin-top:8px}
+.svc-grid a{display:grid;grid-template-columns:64px 1.15fr 1.35fr auto;gap:clamp(16px,3vw,44px);align-items:baseline;padding:clamp(24px,3.4vh,44px) 0;border-bottom:1px solid var(--line);background:var(--bg);transition:background 200ms}.svc-grid a:last-child{border-bottom:0}
 .svc-grid a:hover{background:var(--bg2)}
-.svc-grid .n{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--accent);margin-bottom:14px}
-.svc-grid h2{font-family:var(--display);font-weight:400;font-size:clamp(26px,3vw,40px);line-height:1;margin:0 0 12px}
-.svc-grid p{color:var(--muted);margin:0 0 20px;font-size:16px;line-height:1.55}
-.svc-grid .go{margin-top:auto;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.svc-grid .n{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--accent);margin:0}
+.svc-grid h2{font-family:var(--display);font-weight:400;font-size:clamp(26px,3vw,44px);line-height:1.02;margin:0}
+.svc-grid p{color:var(--muted);margin:0;font-size:16px;line-height:1.55;max-width:46ch}
+.svc-grid .go{align-self:center;justify-self:end;white-space:nowrap;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
 .svc-grid .go::after{content:" →";color:var(--accent)}
+@media(max-width:900px){.svc-grid a{grid-template-columns:48px 1fr;row-gap:10px;padding:26px 0}.svc-grid p{grid-column:2;max-width:none}.svc-grid .go{grid-column:2;justify-self:start;align-self:start}}
 .sectors{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0}
 .sectors span{border:1px solid var(--line);border-radius:999px;padding:9px 14px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .related-svc{max-width:820px;margin-top:56px;border-top:1px solid var(--line);padding-top:28px;display:flex;flex-wrap:wrap;gap:10px}
@@ -190,7 +196,7 @@ body > main:first-of-type{padding-top:clamp(104px,11vw,140px);}
       <h2 data-gr="Γιατί EOLOS" data-en="Why EOLOS">Γιατί EOLOS</h2>
       <p data-gr="Ιδρυθήκαμε από αρχιτέκτονες με πάνω από 20 χρόνια διεθνούς εμπειρίας. Συνδυάζουμε αρχιτεκτονική ακρίβεια, δημιουργική ευελιξία και καθαρό εμπορικό κριτήριο. Μέλη ΤΕΕ, πιστοποίηση WELL AP, δουλειά στα ελληνικά και στα αγγλικά." data-en="Founded by architects with over 20 years of international experience. We combine architectural precision, creative flexibility and clear commercial judgement. TCG members, WELL AP certified, working in Greek and English.">Ιδρυθήκαμε από αρχιτέκτονες με πάνω από 20 χρόνια διεθνούς εμπειρίας. Συνδυάζουμε αρχιτεκτονική ακρίβεια, δημιουργική ευελιξία και καθαρό εμπορικό κριτήριο. Μέλη ΤΕΕ, πιστοποίηση WELL AP, δουλειά στα ελληνικά και στα αγγλικά.</p>
     </section>
-    <section class="cta"><strong data-gr="Σχεδιάζετε χώρο, brand ή website στην Ελλάδα;" data-en="Planning a space, brand or website in Greece?">Σχεδιάζετε χώρο, brand ή website στην Ελλάδα;</strong><a href="../#project-brief" data-gr="Ξεκινήστε ένα project" data-en="Start a project">Ξεκινήστε ένα project</a></section>
+    <section class="related"><h2 data-gr="Σχεδιάζετε χώρο, brand ή website στην Ελλάδα;" data-en="Planning a space, brand or website in Greece?">Σχεδιάζετε χώρο, brand ή website στην Ελλάδα;</h2><a href="../#project-brief" data-gr="Ξεκινήστε ένα project" data-en="Start a project">Ξεκινήστε ένα project</a></section>
   </main>
   <footer class="foot">
   <div class="left" data-i18n="foot_left" data-gr="EOLOS DESIGN LAB · Ελλάδα · Εγγεγραμμένοι στο ΤΕΕ · © 2026" data-en="EOLOS DESIGN LAB · Greece · TCG Registered · © 2026">EOLOS DESIGN LAB · Ελλάδα · Εγγεγραμμένοι στο ΤΕΕ · © 2026</div>
