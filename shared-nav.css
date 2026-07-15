@@ -76,8 +76,9 @@
   color:var(--ink-mute,var(--muted));
   transition:transform 220ms,color 220ms;
 }
-.mobile-menu a:hover .menu-arrow,.mobile-menu a[aria-current="page"] .menu-arrow{transform:translateX(4px);color:var(--accent);}
-.mobile-menu a[aria-current="page"]{color:var(--accent);}
+.mobile-menu a:hover .menu-arrow{transform:translateX(4px);color:var(--accent);}
+.mobile-menu a[aria-current="page"] .menu-arrow{transform:translateX(4px);}
+.mobile-menu a[aria-current="page"]{color:var(--ink);}
 .mobile-menu-meta{
   display:flex;
   flex-wrap:wrap;
