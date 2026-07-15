@@ -1,4 +1,5 @@
 /* Shared EOLOS header and mobile navigation */
+.chrome{background:var(--bg)!important;}
 .menu-toggle{
   position:relative;
   z-index:102;
