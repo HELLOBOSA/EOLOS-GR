@@ -116,45 +116,43 @@ body > main:first-of-type{padding-top:clamp(120px,16vh,190px);}
   </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R5M0RRBSRM"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-R5M0RRBSRM');</script>
+<link rel="stylesheet" href="/shared-nav.css">
+<script defer src="/shared-nav.js"></script>
 </head>
 <body>
-  <header class="chrome" id="chrome">
-  <a class="wm" href="../#top" aria-label="EOLOS DESIGN LAB home">
-    <span class="dot"></span>
-    <span data-i18n="brand">EOLOS DESIGN LAB</span>
-    <span class="sub" data-i18n="brand_sub" style="display:none;">/ GR</span>
+  <!-- SHARED NAV START -->
+<header class="chrome" id="chrome">
+  <a class="wm" href="/" aria-label="EOLOS DESIGN LAB home">
+    <span class="dot"></span><span data-i18n="brand">EOLOS DESIGN LAB</span><span class="sub" data-i18n="brand_sub" style="display:none;">/ GR</span>
   </a>
-  <nav>
-    <a href="../#work" class="tab" data-i18n="nav_work" data-gr="Έργα" data-en="Work">Έργα</a>
-    <a href="../ypiresies/" class="tab" data-i18n="nav_services" data-gr="Υπηρεσίες" data-en="Services">Υπηρεσίες</a>
-    <a href="../studio/" class="tab" data-i18n="nav_studio" data-gr="Στούντιο" data-en="Studio">Στούντιο</a>
-    <a href="../journal/" class="tab" data-i18n="nav_journal" data-gr="Journal" data-en="Journal">Journal</a>
-    <a href="../#contact" class="tab" data-i18n="nav_contact" data-gr="Επικοινωνία" data-en="Contact">Επικοινωνία</a>
+  <nav class="desktop-nav" aria-label="Κύρια πλοήγηση">
+    <a href="/#work" class="tab" data-nav-section="work" data-i18n="nav_work" data-gr="Έργα" data-en="Work">Έργα</a>
+    <a href="/ypiresies/" class="tab" data-nav-section="services" data-i18n="nav_services" data-gr="Υπηρεσίες" data-en="Services">Υπηρεσίες</a>
+    <a href="/journal/" class="tab" data-nav-section="journal" data-i18n="nav_journal" data-gr="Journal" data-en="Journal">Journal</a>
+    <a href="/studio/" class="tab" data-nav-section="studio" data-i18n="nav_studio" data-gr="Στούντιο" data-en="Studio">Στούντιο</a>
   </nav>
   <div class="right">
     <a href="tel:+302103009919" class="tel">+30 210 300 99 19</a>
     <span class="lang" role="group" aria-label="Language">
-      <button type="button" data-lang="gr" aria-pressed="true">GR</button>
-      <span class="sep">/</span>
-      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="gr" aria-pressed="true">GR</button><span class="sep">/</span><button type="button" data-lang="en" aria-pressed="false">EN</button>
     </span>
-    <a href="../#project-brief" class="cta">
-      <span data-i18n="cta_label" data-gr="Ξεκινήστε ένα project" data-en="Start a project">Ξεκινήστε ένα project</span>
-      <span class="arrow">→</span>
-    </a>
-    <a href="../#project-brief" class="mobile-contact" data-i18n="mobile_contact" data-gr="Επικ." data-en="Contact">Επικ.</a>
-    <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Μενού" aria-expanded="false" aria-controls="mobile-menu">
-      <span class="bar" aria-hidden="true"></span>
+    <a href="/#project-brief" class="cta"><span data-i18n="cta_label" data-gr="Ξεκινήστε ένα project" data-en="Start a project">Ξεκινήστε ένα project</span><span class="arrow">→</span></a>
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Άνοιγμα μενού">
+      <span class="menu-toggle-lines" aria-hidden="true"></span>
     </button>
   </div>
-  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-    <a href="../#work" data-i18n="mob_nav_work" data-gr="Έργα" data-en="Work">Έργα</a>
-    <a href="../ypiresies/" data-i18n="mob_nav_services" data-gr="Υπηρεσίες" data-en="Services">Υπηρεσίες</a>
-    <a href="../studio/" data-i18n="mob_nav_studio" data-gr="Στούντιο" data-en="Studio">Στούντιο</a>
-    <a href="../journal/" data-i18n="mob_nav_journal" data-gr="Journal" data-en="Journal">Journal</a>
-    <a href="../#contact" data-i18n="mob_nav_contact" data-gr="Επικοινωνία" data-en="Contact">Επικοινωνία</a>
-  </div>
 </header>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <nav aria-label="Πλοήγηση για κινητά">
+    <a href="/#work" data-nav-section="work"><span class="menu-index">01</span><span data-i18n="mob_nav_work" data-gr="Έργα" data-en="Work">Έργα</span><span class="menu-arrow">→</span></a>
+    <a href="/ypiresies/" data-nav-section="services"><span class="menu-index">02</span><span data-i18n="mob_nav_services" data-gr="Υπηρεσίες" data-en="Services">Υπηρεσίες</span><span class="menu-arrow">→</span></a>
+    <a href="/journal/" data-nav-section="journal"><span class="menu-index">03</span><span data-i18n="mob_nav_journal" data-gr="Journal" data-en="Journal">Journal</span><span class="menu-arrow">→</span></a>
+    <a href="/studio/" data-nav-section="studio"><span class="menu-index">04</span><span data-i18n="mob_nav_studio" data-gr="Στούντιο" data-en="Studio">Στούντιο</span><span class="menu-arrow">→</span></a>
+    <a href="/#contact" data-nav-section="contact"><span class="menu-index">05</span><span data-i18n="mob_nav_contact" data-gr="Επικοινωνία" data-en="Contact">Επικοινωνία</span><span class="menu-arrow">→</span></a>
+  </nav>
+  <div class="mobile-menu-meta"><span>Αθήνα · Ελλάδα</span><span>info@eoloslab.com</span></div>
+</div>
+<!-- SHARED NAV END -->
   <main>
     <section class="hero">
       <div><div class="meta" data-gr="Υπηρεσίες" data-en="Services">Υπηρεσίες</div><h1 data-gr="Υπηρεσίες" data-en="Services">Υπηρεσίες</h1></div>
@@ -175,7 +173,6 @@ body > main:first-of-type{padding-top:clamp(120px,16vh,190px);}
   <script>
 
   (function(){const key="eolos-lang";function read(){try{return localStorage.getItem(key)==="en"?"en":"gr"}catch(e){return "gr"}}function write(value){try{localStorage.setItem(key,value)}catch(e){}}let lang=read();function apply(){document.documentElement.lang=lang==="gr"?"el":"en";document.querySelectorAll("[data-gr]").forEach(el=>{const value=el.getAttribute("data-"+lang);if(value!==null)el.textContent=value});document.querySelectorAll("[data-lang]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===lang)))}document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{lang=b.dataset.lang==="en"?"en":"gr";write(lang);apply()}));apply()})();
-  (function(){const chrome=document.querySelector(".chrome");const toggle=document.querySelector(".menu-toggle");const menu=document.querySelector(".mobile-menu");if(!chrome||!toggle||!menu)return;function setMenu(open){chrome.dataset.menuOpen=String(open);toggle.setAttribute("aria-expanded",String(open));menu.setAttribute("aria-hidden",String(!open))}toggle.addEventListener("click",()=>setMenu(chrome.dataset.menuOpen!=="true"));menu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>setMenu(false)));window.addEventListener("keydown",e=>{if(e.key==="Escape")setMenu(false)});setMenu(false)})();
   (function(){const chrome=document.getElementById('chrome');if(!chrome)return;const onScroll=()=>{chrome.dataset.scrolled=String(window.scrollY>12)};window.addEventListener('scroll',onScroll,{passive:true});onScroll();})();
   (function(){const banner=document.getElementById('cookie-banner');if(!banner)return;const key='eolos-cookie-choice';const expiry=()=>Date.now()+180*24*60*60*1000;function read(){try{const raw=localStorage.getItem(key);if(!raw)return null;const data=JSON.parse(raw);if(!data.expires||data.expires<Date.now()){localStorage.removeItem(key);return null}return data.choice}catch(e){localStorage.removeItem(key);return null}}function close(choice){localStorage.setItem(key,JSON.stringify({choice:choice,expires:expiry()}));banner.hidden=true}if(!read())banner.hidden=false;banner.querySelectorAll('[data-cookie-choice]').forEach(btn=>btn.addEventListener('click',()=>close(btn.getAttribute('data-cookie-choice'))));})();
   
