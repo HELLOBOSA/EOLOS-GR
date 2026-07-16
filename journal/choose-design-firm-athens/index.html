@@ -40,7 +40,7 @@
 .article-faq details p{max-width:68ch;margin:0;padding:0 46px 26px 0;color:var(--muted)}
 /* Homepage chrome/footer clone */
 :root{--pad-x:clamp(20px,4vw,56px);--f-mono:var(--mono);--t-meta:11px;--ink-soft:var(--muted);--ink-mute:var(--muted);--rule:var(--line);}
-.chrome{position:fixed;inset:0 0 auto 0;z-index:50;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:22px var(--pad-x);font-family:var(--f-mono);font-size:var(--t-meta);letter-spacing:.10em;text-transform:uppercase;color:var(--ink-soft);background:linear-gradient(to bottom,var(--bg) 30%,color-mix(in oklch,var(--bg) 70%,transparent) 100%);border-bottom:1px solid transparent;transition:border-color 320ms,background 320ms,padding 320ms;}
+.chrome{position:fixed;inset:0 0 auto 0;z-index:50;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:22px var(--pad-x);font-family:var(--f-mono);font-size:var(--t-meta);letter-spacing:.10em;text-transform:uppercase;color:var(--ink);background:linear-gradient(to bottom,var(--bg) 30%,color-mix(in oklch,var(--bg) 70%,transparent) 100%);border-bottom:1px solid transparent;transition:border-color 320ms,background 320ms,padding 320ms;}
 .chrome[data-scrolled="true"]{padding-top:12px;padding-bottom:12px;border-bottom-color:var(--rule);background:color-mix(in oklch,var(--bg) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
 .chrome .wm{display:inline-flex;align-items:center;gap:12px;color:var(--ink);}
 .chrome .wm .dot{position:relative;width:7px;height:7px;border-radius:999px;background:var(--accent);flex:0 0 auto;}
@@ -88,7 +88,6 @@ body > main:first-of-type{padding-top:clamp(120px,16vh,190px);}
     <a href="/studio/" class="tab" data-nav-section="studio" data-i18n="nav_studio" data-gr="Στούντιο" data-en="Studio">Στούντιο</a>
   </nav>
   <div class="right">
-    <a href="tel:+302103009919" class="tel">+30 210 300 99 19</a>
     <span class="lang" role="group" aria-label="Language">
       <button type="button" data-lang="gr" aria-pressed="true">GR</button><span class="sep">/</span><button type="button" data-lang="en" aria-pressed="false">EN</button>
     </span>
@@ -129,7 +128,6 @@ body > main:first-of-type{padding-top:clamp(120px,16vh,190px);}
       
       <h2 data-gr="Ερωτήσεις που ξεχωρίζουν μια σοβαρή ομάδα" data-en="Questions that reveal a serious team">Ερωτήσεις που ξεχωρίζουν μια σοβαρή ομάδα</h2>
       <p data-gr="Η πρώτη συνάντηση δείχνει περισσότερα από το portfolio. Ρωτήστε πώς ορίζεται το αντικείμενο, ποιος συντονίζει τα συνεργεία, πώς διαχειρίζονται οι αλλαγές και τι μένει εκτός προσφοράς. Οι απαντήσεις δείχνουν αν η ομάδα σκέφτεται εμπορικά ή μόνο αισθητικά." data-en="The first meeting shows more than the portfolio. Ask how scope is defined, who coordinates the contractors, how changes are handled and what is excluded from the proposal. The answers show whether the team thinks commercially or only aesthetically.">Η πρώτη συνάντηση δείχνει περισσότερα από το portfolio. Ρωτήστε πώς ορίζεται το αντικείμενο, ποιος συντονίζει τα συνεργεία, πώς διαχειρίζονται οι αλλαγές και τι μένει εκτός προσφοράς. Οι απαντήσεις δείχνουν αν η ομάδα σκέφτεται εμπορικά ή μόνο αισθητικά.</p>
-      <section class="checklist"><div><strong>Scope</strong><span data-gr="τι περιλαμβάνει και τι όχι, γραπτά" data-en="what is and is not included, in writing">τι περιλαμβάνει και τι όχι, γραπτά</span></div><div><strong>Διαδικασία</strong><span data-gr="στάδια, εγκρίσεις, χρονοδιάγραμμα" data-en="stages, approvals, timeline">στάδια, εγκρίσεις, χρονοδιάγραμμα</span></div><div><strong>Ευθύνη</strong><span data-gr="ποιος συντονίζει μελέτες και εργοτάξιο" data-en="who coordinates studies and site">ποιος συντονίζει μελέτες και εργοτάξιο</span></div><div><strong>Επιτυχία</strong><span data-gr="πώς μετριέται το αποτέλεσμα" data-en="how the result is measured">πώς μετριέται το αποτέλεσμα</span></div></section>
       <h2 data-gr="Γιατί το EOLOS DESIGN LAB είναι διαφορετικό" data-en="Why EOLOS DESIGN LAB is different">Γιατί το EOLOS DESIGN LAB είναι διαφορετικό</h2>
       <p data-gr="Το EOLOS DESIGN LAB λειτουργεί σαν integrated design partner για επιχειρήσεις στην Ελλάδα: interior design, commercial branding, web design, visualization και project management. Για έναν ιδιοκτήτη ή operator, αυτό σημαίνει λιγότερα brief, λιγότερα κενά και πιο καθαρή ευθύνη." data-en="EOLOS DESIGN LAB acts as an integrated design partner for businesses in Greece: interior design, commercial branding, web design, visualization and project management. For an owner or operator, that means fewer briefs, fewer gaps and clearer responsibility.">Το EOLOS DESIGN LAB λειτουργεί σαν integrated design partner για επιχειρήσεις στην Ελλάδα: interior design, commercial branding, web design, visualization και project management. Για έναν ιδιοκτήτη ή operator, αυτό σημαίνει λιγότερα brief, λιγότερα κενά και πιο καθαρή ευθύνη.</p>
     </article>
