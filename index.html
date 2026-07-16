@@ -486,8 +486,8 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
   padding-bottom: clamp(58px, 9vh, 118px);
 }
 .review-gallery .gallery-intro{
-  max-width: 70ch;
-  margin: -22px var(--pad-x) clamp(34px, 5vw, 58px) calc(var(--pad-x) + min(34vw, 520px));
+  max-width: 60ch;
+  margin: 16px 0 0;
   color: var(--ink-mute);
   font-size: clamp(15px, 1.25vw, 18px);
   line-height: 1.7;
@@ -632,7 +632,7 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
 .review-lightbox .prev{ left: 22px; top: 50%; transform: translateY(-50%); }
 .review-lightbox .next{ right: 22px; top: 50%; transform: translateY(-50%); }
 @media (max-width: 900px){
-  .review-gallery .gallery-intro{ margin: 0 var(--pad-x) 34px; }
+  .review-gallery .gallery-intro{ margin: 12px 0 0; }
   .review-grid{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -677,15 +677,15 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
 
 /* ─── Manifesto ─── */
 .manifesto{
-  padding: clamp(80px, 14vh, 180px) var(--pad-x);
+  padding: clamp(60px, 10vh, 140px) var(--pad-x);
   display: grid;
-  grid-template-columns: 1fr 2.2fr;
-  gap: clamp(24px, 6vw, 80px);
+  grid-template-columns: 1fr 1.4fr;
+  gap: clamp(24px, 4vw, 80px);
   align-items: start;
   border-top: 1px solid var(--rule);
 }
 @media (max-width: 860px){ .manifesto{ grid-template-columns: 1fr; } }
-.manifesto .kicker{ color: var(--ink-mute); padding-top: 12px; }
+.manifesto .kicker{ color: var(--ink-mute); padding-top: 10px; }
 .manifesto .body p{
   font-family: var(--f-display);
   font-size: clamp(26px, 3.2vw, 50px);
@@ -987,13 +987,15 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
 <section id="work" class="review-gallery" data-screen-label="02 Work Grid">
   <header class="sec-head">
     <div class="kicker meta" data-i18n="gallery_kicker" data-gr="Έργα" data-en="Work">Έργα</div>
-    <h2>
-      <span data-i18n="gallery_h2_1" data-gr="Επιλεγμένα έργα" data-en="Selected projects">Επιλεγμένα έργα</span>
-      <span class="em" data-i18n="gallery_h2_2" data-gr=" σε χώρο, brand και web" data-en=" in space, brand and web"> σε χώρο, brand και web</span>
-      <span class="pale" data-i18n="gallery_h2_3" data-gr=" από την ίδια ομάδα." data-en=" from one team."> από την ίδια ομάδα.</span>
-    </h2>
+    <div class="sec-head-body">
+      <h2>
+        <span data-i18n="gallery_h2_1" data-gr="Επιλεγμένα έργα" data-en="Selected projects">Επιλεγμένα έργα</span>
+        <span class="em" data-i18n="gallery_h2_2" data-gr=" σε χώρο, brand και web" data-en=" in space, brand and web"> σε χώρο, brand και web</span>
+        <span class="pale" data-i18n="gallery_h2_3" data-gr=" από την ίδια ομάδα." data-en=" from one team."> από την ίδια ομάδα.</span>
+      </h2>
+      <p class="gallery-intro" data-i18n="gallery_intro" data-gr="Όχι πλήρες αρχείο. Μια επιλογή που δείχνει πώς δουλεύουμε: χώρος, brand και web στην ίδια λογική, από το concept μέχρι το άνοιγμα." data-en="Not a full archive. A selection that shows how we work: space, brand and web in one logic, from concept to opening.">Όχι πλήρες αρχείο. Μια επιλογή που δείχνει πώς δουλεύουμε: χώρος, brand και web στην ίδια λογική, από το concept μέχρι το άνοιγμα.</p>
+    </div>
   </header>
-  <p class="gallery-intro" data-i18n="gallery_intro" data-gr="Όχι πλήρες αρχείο. Μια επιλογή που δείχνει πώς δουλεύουμε: χώρος, brand και web στην ίδια λογική, από το concept μέχρι το άνοιγμα." data-en="Not a full archive. A selection that shows how we work: space, brand and web in one logic, from concept to opening.">Όχι πλήρες αρχείο. Μια επιλογή που δείχνει πώς δουλεύουμε: χώρος, brand και web στην ίδια λογική, από το concept μέχρι το άνοιγμα.</p>
   <div id="review-filters" class="review-filters" aria-label="Gallery filters"></div>
   <div id="review-grid" class="review-grid"></div>
   <div id="review-more" class="review-more">
