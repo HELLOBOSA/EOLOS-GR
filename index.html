@@ -774,12 +774,12 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
   }
 }
 .contact .grid{
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px 48px;
   border-top: 1px solid var(--rule);
   padding-top: 32px;
 }
-@media (max-width: 860px){ .contact .grid{ grid-template-columns: 1fr 1fr; } }
 @media (max-width: 520px){ .contact .grid{ grid-template-columns: 1fr; } }
+.contact .grid .cell .loc-addr{ margin-top: 12px; color: var(--ink-mute); font-size: 0.95rem; line-height: 1.5; }
 .contact .grid .cell small{ display: block; color: var(--ink-mute); margin-bottom: 10px; font-family: var(--f-mono); font-size: var(--t-meta); letter-spacing: 0.10em; text-transform: uppercase; }
 .contact .grid .cell .big{
   font-family: var(--f-display); font-size: clamp(22px, 2vw, 30px);
@@ -924,7 +924,6 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
     <a href="/studio/" class="tab" data-nav-section="studio" data-i18n="nav_studio" data-gr="Στούντιο" data-en="Studio">Στούντιο</a>
   </nav>
   <div class="right">
-    <a href="tel:+302103009919" class="tel">+30 210 300 99 19</a>
     <span class="lang" role="group" aria-label="Language">
       <button type="button" data-lang="gr" aria-pressed="true">GR</button><span class="sep">/</span><button type="button" data-lang="en" aria-pressed="false">EN</button>
     </span>
@@ -1093,19 +1092,6 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
 <!-- ─── LOCATIONS ────────────────────────────────────────── -->
 <section class="locations" aria-label="Studio" data-screen-label="05 Studio">
   <div class="loc">
-    <span class="primary-mark"><span class="dot"></span><span data-i18n="loc_primary" data-gr="Έδρα" data-en="Studio">Έδρα</span></span>
-    <h3>
-      <span data-i18n="loc1_city" data-gr="Αθήνα" data-en="Athens">Αθήνα</span><em data-i18n="loc1_sub" data-gr=", Ελλάδα" data-en=", Greece">, Ελλάδα</em>
-    </h3>
-    <div class="clock" data-tz="Europe/Athens">00:00 · ATH</div>
-    <p class="addr">
-      <span data-i18n="loc1_l1" data-gr="Ερμού 56" data-en="Ermou 56">Ερμού 56</span><br/>
-      <span data-i18n="loc1_l2" data-gr="10563 Αθήνα" data-en="10563 Athens">10563 Αθήνα</span><br/>
-      <a href="tel:+302103009919">+30 210 300 99 19</a><br/>
-      <a href="mailto:info@eoloslab.com">info@eoloslab.com</a>
-    </p>
-  </div>
-  <div class="loc" style="border-top:1px solid var(--rule); padding-top:22px;">
     <span class="meta" data-i18n="loc_scope" data-gr="1 ομάδα · 3 τομείς" data-en="1 team · 3 areas">1 ομάδα · 3 τομείς</span>
     <p class="addr" style="margin-top:14px; max-width: 44ch;" data-i18n="loc_scope_desc"
        data-gr="Χώρος, brand και web, σχεδιασμένα μαζί και παραδομένα από την ίδια ομάδα. Αρχιτεκτονική ακρίβεια, δημιουργική ευελιξία και εμπορικό κριτήριο σε κάθε απόφαση." data-en="Space, brand and web, designed together and delivered by the same team. Architectural precision, creative agility and commercial judgement in every decision.">Χώρος, brand και web, σχεδιασμένα μαζί και παραδομένα από την ίδια ομάδα. Αρχιτεκτονική ακρίβεια, δημιουργική ευελιξία και εμπορικό κριτήριο σε κάθε απόφαση.</p>
@@ -1127,20 +1113,14 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
   </h2>
   <div class="grid">
     <div class="cell">
-      <small data-i18n="c_k1" data-gr="Καλέστε Αθήνα" data-en="Call Athens">Καλέστε Αθήνα</small>
+      <small data-i18n="c_k1" data-gr="Αθήνα" data-en="Athens">Αθήνα</small>
       <div class="big"><a href="tel:+302103009919">+30 210 300 99 19</a></div>
+      <div class="loc-addr" data-i18n="c_v3" data-gr="Ερμού 56, 10563, Αθήνα" data-en="Ermou 56, 10563, Athens">Ερμού 56, 10563, Αθήνα</div>
     </div>
     <div class="cell">
-      <small data-i18n="c_k1b" data-gr="Καλέστε Θεσσαλονίκη" data-en="Call Thessaloniki">Καλέστε Θεσσαλονίκη</small>
+      <small data-i18n="c_k1b" data-gr="Θεσσαλονίκη" data-en="Thessaloniki">Θεσσαλονίκη</small>
       <div class="big"><a href="tel:+302311117280">+30 231 111 72 80</a></div>
-    </div>
-    <div class="cell">
-      <small data-i18n="c_k3" data-gr="Επισκεφθείτε Αθήνα" data-en="Visit Athens">Επισκεφθείτε Αθήνα</small>
-      <div class="big" data-i18n="c_v3" data-gr="Ερμού 56, 10563, Αθήνα" data-en="Ermou 56, 10563, Athens">Ερμού 56, 10563, Αθήνα</div>
-    </div>
-    <div class="cell">
-      <small data-i18n="c_k3b" data-gr="Επισκεφθείτε Θεσσαλονίκη" data-en="Visit Thessaloniki">Επισκεφθείτε Θεσσαλονίκη</small>
-      <div class="big" data-i18n="c_v3b" data-gr="Καρόλου Ντηλ 31-33, 54623, Θεσσαλονίκη" data-en="Karolou Dil 31-33, 54623, Thessaloniki">Καρόλου Ντηλ 31-33, 54623, Θεσσαλονίκη</div>
+      <div class="loc-addr" data-i18n="c_v3b" data-gr="Καρόλου Ντηλ 31-33, 54623, Θεσσαλονίκη" data-en="Karolou Dil 31-33, 54623, Thessaloniki">Καρόλου Ντηλ 31-33, 54623, Θεσσαλονίκη</div>
     </div>
     <div class="cell">
       <small>Email</small>
