@@ -40,7 +40,7 @@
 .article-faq details p{max-width:68ch;margin:0;padding:0 46px 26px 0;color:var(--muted)}
 /* Homepage chrome/footer clone */
 :root{--pad-x:clamp(20px,4vw,56px);--f-mono:var(--mono);--t-meta:11px;--ink-soft:var(--muted);--ink-mute:var(--muted);--rule:var(--line);}
-.chrome{position:fixed;inset:0 0 auto 0;z-index:50;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:22px var(--pad-x);font-family:var(--f-mono);font-size:var(--t-meta);letter-spacing:.10em;text-transform:uppercase;color:var(--ink-soft);background:linear-gradient(to bottom,var(--bg) 30%,color-mix(in oklch,var(--bg) 70%,transparent) 100%);border-bottom:1px solid transparent;transition:border-color 320ms,background 320ms,padding 320ms;}
+.chrome{position:fixed;inset:0 0 auto 0;z-index:50;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:22px var(--pad-x);font-family:var(--f-mono);font-size:var(--t-meta);letter-spacing:.10em;text-transform:uppercase;color:var(--ink);background:linear-gradient(to bottom,var(--bg) 30%,color-mix(in oklch,var(--bg) 70%,transparent) 100%);border-bottom:1px solid transparent;transition:border-color 320ms,background 320ms,padding 320ms;}
 .chrome[data-scrolled="true"]{padding-top:12px;padding-bottom:12px;border-bottom-color:var(--rule);background:color-mix(in oklch,var(--bg) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
 .chrome .wm{display:inline-flex;align-items:center;gap:12px;color:var(--ink);}
 .chrome .wm .dot{position:relative;width:7px;height:7px;border-radius:999px;background:var(--accent);flex:0 0 auto;}
@@ -88,7 +88,6 @@ body > main:first-of-type{padding-top:clamp(120px,16vh,190px);}
     <a href="/studio/" class="tab" data-nav-section="studio" data-i18n="nav_studio" data-gr="Στούντιο" data-en="Studio">Στούντιο</a>
   </nav>
   <div class="right">
-    <a href="tel:+302103009919" class="tel">+30 210 300 99 19</a>
     <span class="lang" role="group" aria-label="Language">
       <button type="button" data-lang="gr" aria-pressed="true">GR</button><span class="sep">/</span><button type="button" data-lang="en" aria-pressed="false">EN</button>
     </span>
